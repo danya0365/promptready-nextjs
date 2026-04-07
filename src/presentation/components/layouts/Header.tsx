@@ -1,8 +1,18 @@
 "use client";
 
-import { Menu, Sparkles, X } from "lucide-react";
+import { Menu, Moon, Sparkles, Sun, X } from "lucide-react";
+import { useTheme } from "next-themes";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useSyncExternalStore } from "react";
+
+const emptySubscribe = () => () => {};
+function useIsMounted() {
+  return useSyncExternalStore(
+    emptySubscribe,
+    () => true,
+    () => false,
+  );
+}
 
 export interface NavLink {
   label: string;
@@ -29,6 +39,8 @@ export default function Header({
   ctaHref = "#pricing",
 }: HeaderProps) {
   const [open, setOpen] = useState(false);
+  const { setTheme, resolvedTheme } = useTheme();
+  const mounted = useIsMounted();
 
   return (
     <header className="fixed top-4 left-4 right-4 z-50 glass rounded-2xl transition-all duration-300">
@@ -57,8 +69,21 @@ export default function Header({
           ))}
         </ul>
 
-        {/* CTA */}
+        {/* CTA + Theme Toggle */}
         <div className="hidden md:flex items-center gap-3">
+          <button
+            onClick={() =>
+              setTheme(resolvedTheme === "dark" ? "light" : "dark")
+            }
+            className="p-2 rounded-xl text-text-secondary hover:text-primary hover:bg-primary/10 transition-all duration-200 cursor-pointer"
+            aria-label="Toggle theme"
+          >
+            {mounted && resolvedTheme === "dark" ? (
+              <Sun className="w-5 h-5" />
+            ) : (
+              <Moon className="w-5 h-5" />
+            )}
+          </button>
           <a href={ctaHref} className="btn-game text-sm px-5 py-2.5">
             {ctaLabel}
           </a>
@@ -89,14 +114,27 @@ export default function Header({
                 </a>
               </li>
             ))}
-            <li>
+            <li className="flex items-center justify-between">
               <a
                 href={ctaHref}
-                className="btn-game text-sm px-5 py-2.5 inline-block text-center w-full"
+                className="btn-game text-sm px-5 py-2.5 inline-block text-center flex-1"
                 onClick={() => setOpen(false)}
               >
                 {ctaLabel}
               </a>
+              <button
+                onClick={() =>
+                  setTheme(resolvedTheme === "dark" ? "light" : "dark")
+                }
+                className="ml-3 p-2 rounded-xl text-text-secondary hover:text-primary hover:bg-primary/10 transition-all duration-200 cursor-pointer"
+                aria-label="Toggle theme"
+              >
+                {mounted && resolvedTheme === "dark" ? (
+                  <Sun className="w-5 h-5" />
+                ) : (
+                  <Moon className="w-5 h-5" />
+                )}
+              </button>
             </li>
           </ul>
         </div>

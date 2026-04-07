@@ -1,5 +1,6 @@
 import "@/public/styles/index.css";
 import MainLayout from "@/src/presentation/components/layouts/MainLayout";
+import ThemeProvider from "@/src/presentation/components/providers/ThemeProvider";
 import type { Metadata } from "next";
 import { Noto_Sans_Thai } from "next/font/google";
 
@@ -24,7 +25,9 @@ export default function RootLayout({
   return (
     <html className={notoSansThai.variable} suppressHydrationWarning>
       <body className={`${notoSansThai.className} antialiased`}>
-        <MainLayout>{children}</MainLayout>
+        <ThemeProvider>
+          <MainLayout>{children}</MainLayout>
+        </ThemeProvider>
       </body>
     </html>
   );
