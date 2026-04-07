@@ -4,6 +4,7 @@ import {
   COUNTRIES,
   PROVIDERS,
   PROVIDER_TYPES,
+  SELECTION_GUIDE,
   type LLMProvider,
 } from "@/src/domin/data/llm-providers";
 import {
@@ -16,6 +17,7 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react";
+import Link from "next/link";
 import { useMemo, useState } from "react";
 
 // ─── Sub-components ─────────────────────────────────────────────────────────
@@ -54,25 +56,6 @@ function CompatBadge({ compatible }: { compatible: boolean }) {
   );
 }
 
-function ApiKeyButton({ url }: { url: string }) {
-  return (
-    <a
-      href={url}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium
-        bg-primary/10 text-primary border border-primary/20
-        hover:bg-primary/20 hover:border-primary/40 transition-all duration-150 group"
-    >
-      รับ API Key
-      <ExternalLink
-        size={10}
-        className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-      />
-    </a>
-  );
-}
-
 function CopyButton({ text }: { text: string }) {
   const [copied, setCopied] = useState(false);
   const handleCopy = async () => {
@@ -97,97 +80,137 @@ function CopyButton({ text }: { text: string }) {
 
 function ProviderCard({ provider }: { provider: LLMProvider }) {
   return (
-    <article className="group relative flex flex-col glass rounded-2xl p-5 card-hover">
-      {/* top accent line on hover */}
-      <div className="absolute inset-x-0 top-0 h-px rounded-t-2xl bg-gradient-to-r from-transparent via-primary/0 to-transparent group-hover:via-primary/40 transition-all duration-300" />
+    <Link href={`/llm-directory/${provider.id}`} className="block">
+      <article className="group relative flex flex-col glass rounded-2xl p-5 card-hover h-full">
+        {/* top accent line on hover */}
+        <div className="absolute inset-x-0 top-0 h-px rounded-t-2xl bg-gradient-to-r from-transparent via-primary/0 to-transparent group-hover:via-primary/40 transition-all duration-300" />
 
-      {/* Header */}
-      <div className="flex items-start justify-between gap-3 mb-3">
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1.5">
-            <span className="text-lg leading-none">{provider.flag}</span>
-            <h3 className="font-semibold text-text-primary text-sm leading-tight truncate">
-              {provider.name}
-            </h3>
+        {/* Header */}
+        <div className="flex items-start justify-between gap-3 mb-3">
+          <div className="flex-1 min-w-0">
+            <div className="flex items-center gap-2 mb-1.5">
+              <span className="text-lg leading-none">{provider.flag}</span>
+              <h3 className="font-semibold text-text-primary text-sm leading-tight truncate">
+                {provider.name}
+              </h3>
+            </div>
+            <div className="flex flex-wrap items-center gap-1.5">
+              <TypeBadge type={provider.type} />
+              <CompatBadge compatible={provider.openAICompatible} />
+            </div>
           </div>
-          <div className="flex flex-wrap items-center gap-1.5">
-            <TypeBadge type={provider.type} />
-            <CompatBadge compatible={provider.openAICompatible} />
-          </div>
-        </div>
-        <ApiKeyButton url={provider.apiUrl} />
-      </div>
-
-      {/* Highlight */}
-      {provider.highlight && (
-        <div className="mb-3 px-2.5 py-1.5 rounded-lg bg-accent/10 border border-accent/20 text-accent text-xs font-medium">
-          ✦ {provider.highlight}
-        </div>
-      )}
-
-      {/* Featured models */}
-      <div className="mb-3">
-        <p className="text-[10px] font-semibold text-text-muted uppercase tracking-wider mb-1.5">
-          โมเดลหลัก
-        </p>
-        <div className="flex flex-wrap gap-1">
-          {provider.featuredModels.map((m) => (
-            <span
-              key={m}
-              className="px-2 py-0.5 rounded-md text-[11px] bg-surface text-text-secondary border border-border-muted font-mono"
-            >
-              {m}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Rate limits */}
-      <div className="mb-3">
-        <p className="text-[10px] font-semibold text-text-muted uppercase tracking-wider mb-1.5">
-          Rate Limits
-        </p>
-        <div className="flex flex-wrap gap-1.5">
-          {provider.limits.map((l) => (
-            <span
-              key={l}
-              className="px-2 py-1 rounded-md text-[11px] bg-secondary/10 text-secondary border border-secondary/20 font-mono"
-            >
-              {l}
-            </span>
-          ))}
-        </div>
-      </div>
-
-      {/* Note */}
-      {provider.note && (
-        <p className="text-[11px] text-text-muted leading-relaxed mb-3">
-          <span className="text-text-muted/60">※ </span>
-          {provider.note}
-        </p>
-      )}
-
-      {/* Footer */}
-      <div className="mt-auto pt-3 border-t border-border flex items-center justify-between">
-        <div className="flex items-center gap-1 text-text-muted hover:text-text-secondary transition-colors">
-          <Globe size={11} />
-          <span className="text-[11px] font-mono truncate max-w-[160px]">
-            {provider.apiUrl.replace("https://", "").split("/")[0]}
+          <span className="text-text-muted group-hover:text-primary transition-colors">
+            <ExternalLink size={14} />
           </span>
-          <CopyButton text={provider.apiUrl} />
         </div>
-        {provider.docsUrl && (
-          <a
-            href={provider.docsUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[11px] text-text-muted hover:text-primary transition-colors underline underline-offset-2"
-          >
-            Docs
-          </a>
+
+        {/* Highlight */}
+        {provider.highlight && (
+          <div className="mb-3 px-2.5 py-1.5 rounded-lg bg-accent/10 border border-accent/20 text-accent text-xs font-medium">
+            ✦ {provider.highlight}
+          </div>
         )}
+
+        {/* Featured models */}
+        <div className="mb-3">
+          <p className="text-[10px] font-semibold text-text-muted uppercase tracking-wider mb-1.5">
+            โมเดลหลัก
+          </p>
+          <div className="flex flex-wrap gap-1">
+            {provider.featuredModels.map((m) => (
+              <span
+                key={m}
+                className="px-2 py-0.5 rounded-md text-[11px] bg-surface text-text-secondary border border-border-muted font-mono"
+              >
+                {m}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Rate limits */}
+        <div className="mb-3">
+          <p className="text-[10px] font-semibold text-text-muted uppercase tracking-wider mb-1.5">
+            Rate Limits
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {provider.limits.map((l) => (
+              <span
+                key={l}
+                className="px-2 py-1 rounded-md text-[11px] bg-secondary/10 text-secondary border border-secondary/20 font-mono"
+              >
+                {l}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Note */}
+        {provider.note && (
+          <p className="text-[11px] text-text-muted leading-relaxed mb-3">
+            <span className="text-text-muted/60">※ </span>
+            {provider.note}
+          </p>
+        )}
+
+        {/* Footer */}
+        <div className="mt-auto pt-3 border-t border-border flex items-center justify-between">
+          <div className="flex items-center gap-1 text-text-muted hover:text-text-secondary transition-colors">
+            <Globe size={11} />
+            <span className="text-[11px] font-mono truncate max-w-[160px]">
+              {provider.apiUrl.replace("https://", "").split("/")[0]}
+            </span>
+            <CopyButton text={provider.apiUrl} />
+          </div>
+          {provider.docsUrl && (
+            <a
+              href={provider.docsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[11px] text-text-muted hover:text-primary transition-colors underline underline-offset-2"
+            >
+              Docs
+            </a>
+          )}
+        </div>
+      </article>
+    </Link>
+  );
+}
+
+// ─── Selection Guide ─────────────────────────────────────────────────────────
+
+function SelectionGuide() {
+  return (
+    <div className="glass rounded-2xl p-6 mb-10">
+      <h2 className="text-base font-bold text-text-primary mb-3">
+        🎯 เลือก Provider ที่เหมาะกับคุณ
+      </h2>
+      <div className="overflow-x-auto">
+        <table className="w-full text-sm">
+          <thead>
+            <tr className="border-b border-border">
+              <th className="text-left py-2 pr-4 text-text-muted font-semibold text-xs uppercase tracking-wider">
+                สิ่งที่ต้องการ
+              </th>
+              <th className="text-left py-2 text-text-muted font-semibold text-xs uppercase tracking-wider">
+                แนะนำ
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {SELECTION_GUIDE.map((row) => (
+              <tr key={row.priority} className="border-b border-border/50">
+                <td className="py-2.5 pr-4 text-text-primary font-medium">
+                  {row.priority}
+                </td>
+                <td className="py-2.5 text-text-secondary">{row.picks}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
-    </article>
+    </div>
   );
 }
 
@@ -351,6 +374,9 @@ export default function LLMDirectory() {
           </div>
         </div>
 
+        {/* Selection Guide */}
+        <SelectionGuide />
+
         {/* Stats */}
         <StatsBar providers={filtered} />
 
@@ -380,21 +406,43 @@ export default function LLMDirectory() {
           </div>
         )}
 
-        {/* Footer */}
-        <footer className="mt-16 pt-6 border-t border-border flex flex-wrap items-center justify-between gap-4 text-xs text-text-muted">
-          <p>
-            ข้อมูลอ้างอิงจาก{" "}
+        {/* Credit & Source */}
+        <div className="mt-16 glass rounded-2xl p-6">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+            <div>
+              <p className="text-sm text-text-primary font-semibold mb-1">
+                ข้อมูลอ้างอิงจาก awesome-free-llm-apis
+              </p>
+              <p className="text-xs text-text-muted leading-relaxed max-w-lg">
+                เนื้อหาในหน้านี้อ้างอิงจาก open-source repository{" "}
+                <a
+                  href="https://github.com/mnfst/awesome-free-llm-apis"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-primary hover:underline underline-offset-2"
+                >
+                  mnfst/awesome-free-llm-apis
+                </a>{" "}
+                ซึ่งเป็นแหล่งรวมข้อมูล Free LLM API ที่อัพเดตอยู่เสมอ
+                หากต้องการดูข้อมูลล่าสุด สามารถเข้าไปดูที่ repo โดยตรงได้เลย
+              </p>
+            </div>
             <a
               href="https://github.com/mnfst/awesome-free-llm-apis"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-primary hover:underline underline-offset-2 transition-colors"
+              className="btn-game inline-flex items-center gap-2 text-sm px-5 py-2.5 shrink-0"
             >
-              awesome-free-llm-apis
+              <ExternalLink size={14} />
+              ดู Repo ต้นทาง
             </a>
-          </p>
-          <p>RPM = requests/min · RPD = requests/day · TPM = tokens/min</p>
-        </footer>
+          </div>
+          <div className="mt-4 pt-4 border-t border-border flex flex-wrap items-center gap-4 text-[11px] text-text-muted">
+            <span>RPM = requests/min</span>
+            <span>RPD = requests/day</span>
+            <span>TPM = tokens/min</span>
+          </div>
+        </div>
       </div>
     </section>
   );
