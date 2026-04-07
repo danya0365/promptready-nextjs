@@ -1,9 +1,15 @@
 import { Sparkles } from "lucide-react";
 import Link from "next/link";
 
+interface FooterLink {
+  label: string;
+  href: string;
+  external?: boolean;
+}
+
 interface FooterLinkGroup {
   title: string;
-  links: { label: string; href: string }[];
+  links: FooterLink[];
 }
 
 interface FooterProps {
@@ -14,9 +20,10 @@ const DEFAULT_LINK_GROUPS: FooterLinkGroup[] = [
   {
     title: "Guides",
     links: [
-      { label: "Next.js Setup", href: "/setup-guide" },
-      { label: "All Guides", href: "#guides" },
-      { label: "FAQ", href: "#faq" },
+      { label: "All Guides", href: "/#guides" },
+      { label: "Setup Guide", href: "/setup-guide" },
+      { label: "Free LLM APIs", href: "/llm-directory" },
+      { label: "FAQ", href: "/#faq" },
     ],
   },
   {
@@ -25,17 +32,26 @@ const DEFAULT_LINK_GROUPS: FooterLinkGroup[] = [
       {
         label: "GitHub",
         href: "https://github.com/danya0365/promptready-nextjs",
+        external: true,
       },
-      { label: "Contribute", href: "#contribute" },
-      { label: "Support Us", href: "#support" },
+      { label: "Contribute", href: "/#contribute" },
+      { label: "Support Us", href: "/#support" },
     ],
   },
   {
-    title: "Project",
+    title: "Resources",
     links: [
-      { label: "About", href: "#" },
-      { label: "Changelog", href: "#" },
-      { label: "MIT License", href: "#" },
+      {
+        label: "awesome-free-llm-apis",
+        href: "https://github.com/mnfst/awesome-free-llm-apis",
+        external: true,
+      },
+      { label: "How It Works", href: "/#how-it-works" },
+      {
+        label: "MIT License",
+        href: "https://github.com/danya0365/promptready-nextjs/blob/main/LICENSE",
+        external: true,
+      },
     ],
   },
 ];
@@ -71,12 +87,23 @@ export default function Footer({
               <ul className="space-y-2">
                 {group.links.map((link) => (
                   <li key={link.label}>
-                    <a
-                      href={link.href}
-                      className="text-sm text-text-muted hover:text-primary transition-colors duration-200"
-                    >
-                      {link.label}
-                    </a>
+                    {link.external ? (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-text-muted hover:text-primary transition-colors duration-200"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="text-sm text-text-muted hover:text-primary transition-colors duration-200"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
                   </li>
                 ))}
               </ul>
