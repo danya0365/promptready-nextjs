@@ -26,17 +26,17 @@ interface HeaderProps {
 }
 
 const DEFAULT_NAV_LINKS: NavLink[] = [
-  { label: "Features", href: "#features" },
-  { label: "How It Works", href: "#how-it-works" },
+  { label: "Guides", href: "/#guides" },
+  { label: "How It Works", href: "/#how-it-works" },
   { label: "Setup Guide", href: "/setup-guide" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Contribute", href: "/#contribute" },
+  { label: "FAQ", href: "/#faq" },
 ];
 
 export default function Header({
   navLinks = DEFAULT_NAV_LINKS,
-  ctaLabel = "Get Started",
-  ctaHref = "#pricing",
+  ctaLabel = "Browse Guides",
+  ctaHref = "/#guides",
 }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();
@@ -59,12 +59,12 @@ export default function Header({
         <ul className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a
+              <Link
                 href={link.href}
                 className="text-sm font-medium text-text-secondary hover:text-primary transition-colors duration-200"
               >
                 {link.label}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>
@@ -84,9 +84,9 @@ export default function Header({
               <Moon className="w-5 h-5" />
             )}
           </button>
-          <a href={ctaHref} className="btn-game text-sm px-5 py-2.5">
+          <Link href={ctaHref} className="btn-game text-sm px-5 py-2.5">
             {ctaLabel}
-          </a>
+          </Link>
         </div>
 
         {/* Mobile Toggle */}
@@ -105,23 +105,23 @@ export default function Header({
           <ul className="flex flex-col gap-3">
             {navLinks.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   className="block py-2 text-sm font-medium text-text-secondary hover:text-primary transition-colors"
                   onClick={() => setOpen(false)}
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li className="flex items-center justify-between">
-              <a
+              <Link
                 href={ctaHref}
                 className="btn-game text-sm px-5 py-2.5 inline-block text-center flex-1"
                 onClick={() => setOpen(false)}
               >
                 {ctaLabel}
-              </a>
+              </Link>
               <button
                 onClick={() =>
                   setTheme(resolvedTheme === "dark" ? "light" : "dark")

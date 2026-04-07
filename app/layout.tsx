@@ -12,9 +12,9 @@ const notoSansThai = Noto_Sans_Thai({
 });
 
 export const metadata: Metadata = {
-  title: "PromptReady — AI-Consistent Project Setup",
+  title: "PromptReady — Open Source AI Development Guides",
   description:
-    "A complete checklist and guide to prepare your Next.js project before prompting AI — so output stays consistent every session.",
+    "Free, open-source setup guides and prompt templates for AI-powered development. Prepare your project before prompting AI.",
 };
 
 export default function RootLayout({

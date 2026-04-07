@@ -1,4 +1,4 @@
-import { ArrowRight, Bot, BrainCircuit, Terminal, Zap } from "lucide-react";
+import { ArrowRight, BookOpen, ExternalLink, Sparkles } from "lucide-react";
 
 export default function HeroSection() {
   return (
@@ -12,138 +12,104 @@ export default function HeroSection() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/10 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative max-w-7xl mx-auto px-6 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left — Copy */}
-          <div className="max-w-xl">
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold text-primary bg-primary/10 border border-primary/20 mb-6 animate-fade-in">
-              <Zap className="w-4 h-4" />
-              AI Agent Mastery
-            </span>
+        <div className="text-center max-w-3xl mx-auto">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold text-primary bg-primary/10 border border-primary/20 mb-6 animate-fade-in">
+            <Sparkles className="w-4 h-4" />
+            Open Source &middot; Free Forever
+          </span>
 
-            <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-text-primary animate-fade-in"
-              style={{ animationDelay: "0.1s" }}
-            >
-              Tips & Tricks for{" "}
-              <span className="gradient-text">AI Agent Skills</span> & Prompts
-            </h1>
+          <h1
+            className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-text-primary animate-fade-in"
+            style={{ animationDelay: "0.1s" }}
+          >
+            The Developer&apos;s Guide to{" "}
+            <span className="gradient-text">AI-Powered Development</span>
+          </h1>
 
-            <p
-              className="mt-6 text-lg text-text-secondary leading-relaxed animate-fade-in"
-              style={{ animationDelay: "0.2s" }}
-            >
-              Master the art of AI-assisted development. Learn battle-tested
-              prompts, agent configurations, and workflow patterns that 10x your
-              productivity.
-            </p>
+          <p
+            className="mt-6 text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto animate-fade-in"
+            style={{ animationDelay: "0.2s" }}
+          >
+            A curated collection of setup guides, prompt templates, and workflow
+            patterns — open source and free for every developer. Read, learn,
+            and ship better code with AI.
+          </p>
 
-            <div
-              className="mt-8 flex flex-wrap gap-4 animate-fade-in"
-              style={{ animationDelay: "0.3s" }}
+          <div
+            className="mt-8 flex flex-wrap justify-center gap-4 animate-fade-in"
+            style={{ animationDelay: "0.3s" }}
+          >
+            <a
+              href="#guides"
+              className="btn-game inline-flex items-center gap-2 text-base px-7 py-3.5"
             >
-              <a
-                href="#pricing"
-                className="btn-game inline-flex items-center gap-2 text-base px-7 py-3.5"
-              >
-                Start Learning
-                <ArrowRight className="w-4 h-4" />
-              </a>
-              <a
-                href="#features"
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-text-primary bg-surface-elevated border border-border hover:border-primary/40 transition-all duration-200 cursor-pointer"
-              >
-                See What&apos;s Inside
-              </a>
-            </div>
-
-            {/* Social Proof */}
-            <div
-              className="mt-10 flex items-center gap-4 animate-fade-in"
-              style={{ animationDelay: "0.4s" }}
+              <BookOpen className="w-5 h-5" />
+              Browse Guides
+            </a>
+            <a
+              href="https://github.com/danya0365/promptready-nextjs"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-semibold text-text-primary bg-surface-elevated border border-border hover:border-primary/40 transition-all duration-200 cursor-pointer"
             >
-              <div className="flex -space-x-2">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <div
-                    key={i}
-                    className="w-8 h-8 rounded-full border-2 border-background bg-linear-to-br from-primary/60 to-secondary/60"
-                  />
-                ))}
-              </div>
-              <div className="text-sm text-text-secondary">
-                <span className="font-bold text-text-primary">2,400+</span>{" "}
-                developers already leveled up
-              </div>
-            </div>
+              <ExternalLink className="w-5 h-5" />
+              View on GitHub
+            </a>
           </div>
 
-          {/* Right — Visual */}
-          <div className="relative hidden lg:flex items-center justify-center">
-            <div className="relative w-full max-w-md">
-              {/* Main Card */}
-              <div
-                className="glass rounded-3xl p-8 animate-fade-in"
-                style={{ animationDelay: "0.3s" }}
-              >
-                <div className="flex items-center gap-3 mb-6">
-                  <div className="w-3 h-3 rounded-full bg-error" />
-                  <div className="w-3 h-3 rounded-full bg-warning" />
-                  <div className="w-3 h-3 rounded-full bg-success" />
-                  <span className="ml-2 text-xs text-text-muted font-mono">
-                    prompt-ready.config
-                  </span>
-                </div>
-
-                <div className="space-y-4 font-mono text-sm">
-                  <div className="flex items-center gap-3 p-3 rounded-xl bg-primary/10 border border-primary/20">
-                    <Terminal className="w-5 h-5 text-primary shrink-0" />
-                    <span className="text-text-primary">
-                      <span className="text-primary font-semibold">agent</span>
-                      .configure(skills)
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 rounded-xl bg-secondary/10 border border-secondary/20">
-                    <BrainCircuit className="w-5 h-5 text-secondary shrink-0" />
-                    <span className="text-text-primary">
-                      <span className="text-secondary font-semibold">
-                        prompt
-                      </span>
-                      .optimize(context)
-                    </span>
-                  </div>
-                  <div className="flex items-center gap-3 p-3 rounded-xl bg-accent/10 border border-accent/20">
-                    <Bot className="w-5 h-5 text-accent shrink-0" />
-                    <span className="text-text-primary">
-                      <span className="text-accent font-semibold">output</span>
-                      .quality === &quot;10x&quot;
-                    </span>
-                  </div>
-                </div>
+          {/* Stats */}
+          <div
+            className="mt-14 grid grid-cols-3 gap-6 max-w-lg mx-auto animate-fade-in"
+            style={{ animationDelay: "0.4s" }}
+          >
+            {[
+              { value: "7", label: "Setup Phases" },
+              { value: "Free", label: "Always" },
+              { value: "OSS", label: "Open Source" },
+            ].map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="text-2xl font-extrabold gradient-text">
+                  {stat.value}
+                </p>
+                <p className="text-xs text-text-muted mt-1">{stat.label}</p>
               </div>
-
-              {/* Floating badge top-right */}
-              <div className="absolute -top-4 -right-4 glass rounded-2xl px-4 py-3 animate-bounce-soft">
-                <div className="flex items-center gap-2">
-                  <Zap className="w-5 h-5 text-warning" />
-                  <span className="text-sm font-bold text-text-primary">
-                    50+ Skills
-                  </span>
-                </div>
-              </div>
-
-              {/* Floating badge bottom-left */}
-              <div
-                className="absolute -bottom-4 -left-4 glass rounded-2xl px-4 py-3 animate-bounce-soft"
-                style={{ animationDelay: "1s" }}
-              >
-                <div className="flex items-center gap-2">
-                  <Bot className="w-5 h-5 text-primary" />
-                  <span className="text-sm font-bold text-text-primary">
-                    200+ Prompts
-                  </span>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
+        </div>
+
+        {/* Guide Preview Card */}
+        <div
+          className="mt-16 max-w-2xl mx-auto animate-fade-in"
+          style={{ animationDelay: "0.5s" }}
+        >
+          <a
+            href="/setup-guide"
+            className="block glass rounded-3xl p-6 card-hover group"
+          >
+            <div className="flex items-center gap-4">
+              <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center shrink-0">
+                <BookOpen className="w-7 h-7 text-primary" />
+              </div>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-bold text-success bg-success/10 border border-success/20 px-2 py-0.5 rounded-full">
+                    Available
+                  </span>
+                  <span className="text-xs text-text-muted">
+                    Next.js &middot; 7 Phases
+                  </span>
+                </div>
+                <h3 className="text-base font-bold text-text-primary">
+                  AI-Consistent Project Setup Guide
+                </h3>
+                <p className="text-sm text-text-secondary mt-1">
+                  Complete checklist to prepare your Next.js project before
+                  prompting AI
+                </p>
+              </div>
+              <ArrowRight className="w-5 h-5 text-text-muted group-hover:text-primary group-hover:translate-x-1 transition-all duration-200 shrink-0" />
+            </div>
+          </a>
         </div>
       </div>
     </section>

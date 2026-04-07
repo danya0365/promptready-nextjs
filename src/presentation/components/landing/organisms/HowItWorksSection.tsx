@@ -1,30 +1,34 @@
-import { Download, Puzzle, Rocket, Settings } from "lucide-react";
+import { BookOpen, Copy, GitFork, Rocket } from "lucide-react";
 import SectionHeading from "../atoms/SectionHeading";
 
 const STEPS = [
   {
-    icon: Download,
+    icon: BookOpen,
     step: "01",
-    title: "Get the Toolkit",
-    description: "Choose your plan and instantly access the full library of skills, prompts, and configurations.",
+    title: "Pick a Guide",
+    description:
+      "Choose the framework setup guide that matches your project — Next.js, Laravel, NestJS, and more.",
   },
   {
-    icon: Settings,
+    icon: Copy,
     step: "02",
-    title: "Configure Your IDE",
-    description: "Drop the agent skills and rules into your project. Works with Cursor, Windsurf, Claude Code, and others.",
-  },
-  {
-    icon: Puzzle,
-    step: "03",
-    title: "Use the Prompts",
-    description: "Pick from 200+ prompt templates organized by task type. Copy, customize, and execute.",
+    title: "Read & Copy",
+    description:
+      "Follow the step-by-step phases. Copy code snippets, config files, and prompt templates directly.",
   },
   {
     icon: Rocket,
+    step: "03",
+    title: "Apply to Your Project",
+    description:
+      "Paste into your project and start prompting AI. Your output will be consistent from the first session.",
+  },
+  {
+    icon: GitFork,
     step: "04",
-    title: "Ship 10x Faster",
-    description: "Watch your AI agent produce consistent, high-quality code that follows your architecture.",
+    title: "Contribute Back",
+    description:
+      "Found a better pattern? Open a PR. This is open source — every developer can help improve the guides.",
   },
 ];
 
@@ -34,9 +38,9 @@ export default function HowItWorksSection() {
       <div className="max-w-7xl mx-auto">
         <SectionHeading
           badge="How It Works"
-          title="From Zero to"
-          highlight="AI-Powered"
-          description="Get up and running in under 5 minutes. No complex setup required."
+          title="Learn, Apply,"
+          highlight="Contribute"
+          description="No signup, no paywall. Just pick a guide and start building."
         />
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

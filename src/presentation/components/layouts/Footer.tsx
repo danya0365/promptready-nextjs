@@ -12,27 +12,30 @@ interface FooterProps {
 
 const DEFAULT_LINK_GROUPS: FooterLinkGroup[] = [
   {
-    title: "Product",
+    title: "Guides",
     links: [
-      { label: "Features", href: "#features" },
-      { label: "Pricing", href: "#pricing" },
+      { label: "Next.js Setup", href: "/setup-guide" },
+      { label: "All Guides", href: "#guides" },
       { label: "FAQ", href: "#faq" },
     ],
   },
   {
-    title: "Resources",
+    title: "Community",
     links: [
-      { label: "Documentation", href: "#" },
-      { label: "Blog", href: "#" },
-      { label: "Changelog", href: "#" },
+      {
+        label: "GitHub",
+        href: "https://github.com/danya0365/promptready-nextjs",
+      },
+      { label: "Contribute", href: "#contribute" },
+      { label: "Support Us", href: "#support" },
     ],
   },
   {
-    title: "Company",
+    title: "Project",
     links: [
       { label: "About", href: "#" },
-      { label: "Contact", href: "#" },
-      { label: "Privacy Policy", href: "#" },
+      { label: "Changelog", href: "#" },
+      { label: "MIT License", href: "#" },
     ],
   },
 ];
@@ -55,7 +58,7 @@ export default function Footer({
               </span>
             </Link>
             <p className="text-sm text-text-muted leading-relaxed">
-              The definitive toolkit for mastering AI-assisted development.
+              Open-source guides for AI-powered development. Free forever.
             </p>
           </div>
 
@@ -86,7 +89,7 @@ export default function Footer({
             &copy; {new Date().getFullYear()} PromptReady. All rights reserved.
           </p>
           <p className="text-xs text-text-muted">
-            Built with AI, for AI-powered developers.
+            Open source &middot; MIT License &middot; Made for developers
           </p>
         </div>
       </div>

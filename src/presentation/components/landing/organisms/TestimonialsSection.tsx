@@ -1,72 +1,90 @@
-import { Star } from "lucide-react";
+import { BookPlus, Bug, GitFork, Lightbulb } from "lucide-react";
 import SectionHeading from "../atoms/SectionHeading";
 
-const TESTIMONIALS = [
+const CONTRIBUTIONS = [
   {
-    name: "Alex Chen",
-    role: "Senior Frontend Developer",
-    content:
-      "PromptReady completely changed how I interact with AI agents. The prompt templates alone saved me 10+ hours per week. My Cursor output went from mediocre to production-grade.",
-    rating: 5,
+    icon: BookPlus,
+    title: "Add a New Guide",
+    description:
+      "Write a setup guide for your favorite framework. Follow our template and submit a PR.",
+    color: "primary",
   },
   {
-    name: "Sarah Kim",
-    role: "Full-Stack Engineer @ Startup",
-    content:
-      "The agent skills are incredibly well-crafted. I dropped them into my Windsurf config and the AI immediately started following my architecture patterns. Game changer.",
-    rating: 5,
+    icon: Lightbulb,
+    title: "Share Tips & Tricks",
+    description:
+      "Discovered a better prompt pattern or workflow? Share it with the community.",
+    color: "secondary",
   },
   {
-    name: "Marcus Rivera",
-    role: "Tech Lead",
-    content:
-      "We rolled this out to our entire team. Consistency across AI-generated code improved dramatically. The workflow patterns are worth the price alone.",
-    rating: 5,
+    icon: Bug,
+    title: "Report Issues",
+    description:
+      "Found outdated info or a mistake? Open an issue and help us keep guides accurate.",
+    color: "accent",
+  },
+  {
+    icon: GitFork,
+    title: "Fork & Customize",
+    description:
+      "Fork the repo and adapt guides for your team. MIT licensed — use however you want.",
+    color: "primary",
   },
 ];
 
+const COLOR_MAP: Record<string, { bg: string; border: string; text: string }> =
+  {
+    primary: {
+      bg: "bg-primary/10",
+      border: "border-primary/20",
+      text: "text-primary",
+    },
+    secondary: {
+      bg: "bg-secondary/10",
+      border: "border-secondary/20",
+      text: "text-secondary",
+    },
+    accent: {
+      bg: "bg-accent/10",
+      border: "border-accent/20",
+      text: "text-accent",
+    },
+  };
+
 export default function TestimonialsSection() {
   return (
-    <section className="py-24 px-6">
+    <section id="contribute" className="py-24 px-6">
       <div className="max-w-7xl mx-auto">
         <SectionHeading
-          badge="Testimonials"
-          title="Loved by"
-          highlight="Developers"
-          description="See what developers are saying about PromptReady."
+          badge="Open Source"
+          title="Built by the"
+          highlight="Community"
+          description="PromptReady is open source. Everyone can read, use, and contribute."
         />
 
-        <div className="grid md:grid-cols-3 gap-6">
-          {TESTIMONIALS.map((testimonial) => (
-            <div
-              key={testimonial.name}
-              className="glass rounded-2xl p-6 card-hover"
-            >
-              {/* Stars */}
-              <div className="flex gap-1 mb-4">
-                {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <Star
-                    key={i}
-                    className="w-4 h-4 text-warning fill-warning"
-                  />
-                ))}
-              </div>
-
-              <p className="text-sm text-text-secondary leading-relaxed mb-6">
-                &ldquo;{testimonial.content}&rdquo;
-              </p>
-
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-linear-to-br from-primary/60 to-secondary/60" />
-                <div>
-                  <p className="text-sm font-bold text-text-primary">
-                    {testimonial.name}
-                  </p>
-                  <p className="text-xs text-text-muted">{testimonial.role}</p>
+        <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {CONTRIBUTIONS.map((item) => {
+            const Icon = item.icon;
+            const colors = COLOR_MAP[item.color];
+            return (
+              <div
+                key={item.title}
+                className="glass rounded-2xl p-6 card-hover"
+              >
+                <div
+                  className={`w-12 h-12 rounded-xl ${colors.bg} border ${colors.border} flex items-center justify-center mb-4`}
+                >
+                  <Icon className={`w-6 h-6 ${colors.text}`} />
                 </div>
+                <h3 className="text-lg font-bold text-text-primary mb-2">
+                  {item.title}
+                </h3>
+                <p className="text-sm text-text-secondary leading-relaxed">
+                  {item.description}
+                </p>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

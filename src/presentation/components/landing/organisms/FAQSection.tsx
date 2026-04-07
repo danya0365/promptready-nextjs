@@ -1,39 +1,39 @@
 "use client";
 
-import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 import SectionHeading from "../atoms/SectionHeading";
 
 const FAQS = [
   {
+    question: "Is PromptReady really free?",
+    answer:
+      "Yes, 100% free and open source. All guides, templates, and configurations are available to everyone. No signup, no paywall, no hidden costs.",
+  },
+  {
     question: "What AI coding tools does this work with?",
     answer:
-      "PromptReady works with all major AI-powered IDEs and assistants: Cursor, Windsurf, Claude Code, GitHub Copilot, Cody, and more. The prompt templates are universal, while agent skills have IDE-specific formats included.",
+      "The guides work with all major AI-powered IDEs and assistants: Cursor, Windsurf, Claude Code, GitHub Copilot, Cody, and more. The prompt templates are universal.",
   },
   {
-    question: "Is this a subscription or one-time purchase?",
+    question: "What frameworks are supported?",
     answer:
-      "One-time purchase. Pay once and get lifetime access to all current content plus future updates. No recurring fees, no hidden costs.",
+      "Currently we have a complete Next.js setup guide. Laravel, NestJS, and React Native guides are coming soon. Want to contribute a guide for your favorite framework? Open a PR!",
   },
   {
-    question: "How are the prompts different from what I can find online?",
-    answer:
-      "Our prompts are battle-tested across hundreds of real projects. They include context-setting, constraint specification, and output formatting that generic prompts miss. Each prompt is optimized for consistency and quality.",
-  },
-  {
-    question: "What are Agent Skills exactly?",
+    question: "What are Agent Skills?",
     answer:
       "Agent Skills are structured instruction files (.md) that you place in your project to guide AI agents. They define coding patterns, architecture rules, and conventions that the AI follows consistently across sessions.",
   },
   {
-    question: "Can I use this for my team?",
+    question: "How can I contribute?",
     answer:
-      "Yes! The Team plan supports up to 10 members with shared prompt libraries and synchronized configurations. This ensures everyone on your team gets consistent AI output.",
+      "Fork the repository on GitHub, create a new guide following our template, and submit a Pull Request. You can also report issues, suggest improvements, or share prompt patterns you&apos;ve discovered.",
   },
   {
-    question: "Do I get updates when new content is added?",
+    question: "Why should I set up my project before prompting AI?",
     answer:
-      "Absolutely. All plans include lifetime updates. As new AI tools emerge and best practices evolve, we continuously add new skills, prompts, and configurations.",
+      "AI has no memory between sessions. Without proper context files (AGENTS.md, design system, API spec), the AI guesses everything — libraries, patterns, naming conventions. The result is inconsistent code every time. Our guides fix this.",
   },
 ];
 
