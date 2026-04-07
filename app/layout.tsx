@@ -1,20 +1,20 @@
-import '@/public/styles/index.css';
+import "@/public/styles/index.css";
+import MainLayout from "@/src/presentation/components/layouts/MainLayout";
 import type { Metadata } from "next";
-import { Noto_Sans_Thai } from 'next/font/google';
+import { Noto_Sans_Thai } from "next/font/google";
 
 const notoSansThai = Noto_Sans_Thai({
-  subsets: ['thai', 'latin'],
-  variable: '--font-noto-sans-thai',
+  subsets: ["thai", "latin"],
+  variable: "--font-noto-sans-thai",
   preload: true,
-  display: 'swap',
+  display: "swap",
 });
 
-
 export const metadata: Metadata = {
-  title: 'PromptReady — AI-Consistent Project Setup',
+  title: "PromptReady — AI-Consistent Project Setup",
   description:
-    'A complete checklist and guide to prepare your Next.js project before prompting AI — so output stays consistent every session.',
-}
+    "A complete checklist and guide to prepare your Next.js project before prompting AI — so output stays consistent every session.",
+};
 
 export default function RootLayout({
   children,
@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <html className={notoSansThai.variable} suppressHydrationWarning>
       <body className={`${notoSansThai.className} antialiased`}>
-        {children}
+        <MainLayout>{children}</MainLayout>
       </body>
     </html>
   );

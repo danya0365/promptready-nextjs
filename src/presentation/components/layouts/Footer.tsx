@@ -1,6 +1,16 @@
 import { Sparkles } from "lucide-react";
+import Link from "next/link";
 
-const FOOTER_LINKS = [
+interface FooterLinkGroup {
+  title: string;
+  links: { label: string; href: string }[];
+}
+
+interface FooterProps {
+  linkGroups?: FooterLinkGroup[];
+}
+
+const DEFAULT_LINK_GROUPS: FooterLinkGroup[] = [
   {
     title: "Product",
     links: [
@@ -27,28 +37,30 @@ const FOOTER_LINKS = [
   },
 ];
 
-export default function Footer() {
+export default function Footer({
+  linkGroups = DEFAULT_LINK_GROUPS,
+}: FooterProps) {
   return (
     <footer className="border-t border-border py-16 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="grid md:grid-cols-4 gap-10">
           {/* Brand */}
           <div>
-            <a href="#" className="flex items-center gap-2 mb-4">
+            <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-9 h-9 rounded-xl bg-linear-to-br from-primary to-secondary flex items-center justify-center">
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
               <span className="text-lg font-bold text-text-primary">
                 Prompt<span className="gradient-text">Ready</span>
               </span>
-            </a>
+            </Link>
             <p className="text-sm text-text-muted leading-relaxed">
               The definitive toolkit for mastering AI-assisted development.
             </p>
           </div>
 
           {/* Link Groups */}
-          {FOOTER_LINKS.map((group) => (
+          {linkGroups.map((group) => (
             <div key={group.title}>
               <h4 className="text-sm font-bold text-text-primary mb-4">
                 {group.title}

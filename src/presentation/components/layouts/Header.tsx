@@ -1,34 +1,50 @@
 "use client";
 
 import { Menu, Sparkles, X } from "lucide-react";
+import Link from "next/link";
 import { useState } from "react";
 
-const NAV_LINKS = [
+export interface NavLink {
+  label: string;
+  href: string;
+}
+
+interface HeaderProps {
+  navLinks?: NavLink[];
+  ctaLabel?: string;
+  ctaHref?: string;
+}
+
+const DEFAULT_NAV_LINKS: NavLink[] = [
   { label: "Features", href: "#features" },
   { label: "How It Works", href: "#how-it-works" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
 ];
 
-export default function Navbar() {
+export default function Header({
+  navLinks = DEFAULT_NAV_LINKS,
+  ctaLabel = "Get Started",
+  ctaHref = "#pricing",
+}: HeaderProps) {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="fixed top-4 left-4 right-4 z-50 glass rounded-2xl transition-all duration-300">
       <nav className="max-w-7xl mx-auto flex items-center justify-between px-6 py-3">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-2 group">
+        <Link href="/" className="flex items-center gap-2 group">
           <div className="w-9 h-9 rounded-xl bg-linear-to-br from-primary to-secondary flex items-center justify-center">
             <Sparkles className="w-5 h-5 text-white" />
           </div>
           <span className="text-lg font-bold text-text-primary">
             Prompt<span className="gradient-text">Ready</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <ul className="hidden md:flex items-center gap-8">
-          {NAV_LINKS.map((link) => (
+          {navLinks.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
@@ -42,8 +58,8 @@ export default function Navbar() {
 
         {/* CTA */}
         <div className="hidden md:flex items-center gap-3">
-          <a href="#pricing" className="btn-game text-sm px-5 py-2.5">
-            Get Started
+          <a href={ctaHref} className="btn-game text-sm px-5 py-2.5">
+            {ctaLabel}
           </a>
         </div>
 
@@ -61,7 +77,7 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden px-6 pb-4 animate-fade-in">
           <ul className="flex flex-col gap-3">
-            {NAV_LINKS.map((link) => (
+            {navLinks.map((link) => (
               <li key={link.href}>
                 <a
                   href={link.href}
@@ -74,11 +90,11 @@ export default function Navbar() {
             ))}
             <li>
               <a
-                href="#pricing"
+                href={ctaHref}
                 className="btn-game text-sm px-5 py-2.5 inline-block text-center w-full"
                 onClick={() => setOpen(false)}
               >
-                Get Started
+                {ctaLabel}
               </a>
             </li>
           </ul>
