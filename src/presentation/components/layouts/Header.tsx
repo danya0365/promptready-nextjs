@@ -27,8 +27,8 @@ interface HeaderProps {
 
 const DEFAULT_NAV_LINKS: NavLink[] = [
   { label: "Guides", href: "/#guides" },
-  { label: "How It Works", href: "/#how-it-works" },
   { label: "Setup Guide", href: "/setup-guide" },
+  { label: "Free LLMs", href: "/llm-directory" },
   { label: "Contribute", href: "/#contribute" },
   { label: "FAQ", href: "/#faq" },
 ];
