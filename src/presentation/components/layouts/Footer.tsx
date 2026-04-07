@@ -20,10 +20,10 @@ const DEFAULT_LINK_GROUPS: FooterLinkGroup[] = [
   {
     title: "Guides",
     links: [
-      { label: "All Guides", href: "/#guides" },
+      { label: "All Guides", href: "/guides" },
       { label: "Setup Guide", href: "/setup-guide" },
       { label: "Free LLM APIs", href: "/llm-directory" },
-      { label: "FAQ", href: "/#faq" },
+      { label: "FAQ", href: "/faq" },
     ],
   },
   {
@@ -34,8 +34,8 @@ const DEFAULT_LINK_GROUPS: FooterLinkGroup[] = [
         href: "https://github.com/danya0365/promptready-nextjs",
         external: true,
       },
-      { label: "Contribute", href: "/#contribute" },
-      { label: "Support Us", href: "/#support" },
+      { label: "Contribute", href: "/contribute" },
+      { label: "Support Us", href: "/support" },
     ],
   },
   {
@@ -46,12 +46,7 @@ const DEFAULT_LINK_GROUPS: FooterLinkGroup[] = [
         href: "https://github.com/mnfst/awesome-free-llm-apis",
         external: true,
       },
-      { label: "How It Works", href: "/#how-it-works" },
-      {
-        label: "MIT License",
-        href: "https://github.com/danya0365/promptready-nextjs/blob/main/LICENSE",
-        external: true,
-      },
+      { label: "MIT License", href: "/license" },
     ],
   },
 ];

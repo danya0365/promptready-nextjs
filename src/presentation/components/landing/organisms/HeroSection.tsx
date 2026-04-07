@@ -40,7 +40,7 @@ export default function HeroSection() {
             style={{ animationDelay: "0.3s" }}
           >
             <a
-              href="#guides"
+              href="/guides"
               className="btn-game inline-flex items-center gap-2 text-base px-7 py-3.5"
             >
               <BookOpen className="w-5 h-5" />

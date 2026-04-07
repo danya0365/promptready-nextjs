@@ -26,17 +26,17 @@ interface HeaderProps {
 }
 
 const DEFAULT_NAV_LINKS: NavLink[] = [
-  { label: "Guides", href: "/#guides" },
+  { label: "Guides", href: "/guides" },
   { label: "Setup Guide", href: "/setup-guide" },
   { label: "Free LLMs", href: "/llm-directory" },
-  { label: "Contribute", href: "/#contribute" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "Contribute", href: "/contribute" },
+  { label: "FAQ", href: "/faq" },
 ];
 
 export default function Header({
   navLinks = DEFAULT_NAV_LINKS,
   ctaLabel = "Browse Guides",
-  ctaHref = "/#guides",
+  ctaHref = "/guides",
 }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();

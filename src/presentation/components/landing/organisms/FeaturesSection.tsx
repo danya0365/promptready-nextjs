@@ -128,7 +128,7 @@ export default function FeaturesSection() {
         <p className="text-center text-sm text-text-muted mt-8">
           More frameworks coming soon. Want to contribute?{" "}
           <a
-            href="#contribute"
+            href="/contribute"
             className="text-primary hover:underline font-medium"
           >
             Join us on GitHub
