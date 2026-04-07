@@ -17,7 +17,7 @@ import {
   Sparkles,
   Zap,
 } from "lucide-react";
-import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
 
 // ─── Sub-components ─────────────────────────────────────────────────────────
@@ -79,102 +79,108 @@ function CopyButton({ text }: { text: string }) {
 }
 
 function ProviderCard({ provider }: { provider: LLMProvider }) {
+  const router = useRouter();
   return (
-    <Link href={`/llm-directory/${provider.id}`} className="block">
-      <article className="group relative flex flex-col glass rounded-2xl p-5 card-hover h-full">
-        {/* top accent line on hover */}
-        <div className="absolute inset-x-0 top-0 h-px rounded-t-2xl bg-gradient-to-r from-transparent via-primary/0 to-transparent group-hover:via-primary/40 transition-all duration-300" />
+    <article
+      onClick={() => router.push(`/llm-directory/${provider.id}`)}
+      className="group relative flex flex-col glass rounded-2xl p-5 card-hover h-full cursor-pointer"
+    >
+      {/* top accent line on hover */}
+      <div className="absolute inset-x-0 top-0 h-px rounded-t-2xl bg-gradient-to-r from-transparent via-primary/0 to-transparent group-hover:via-primary/40 transition-all duration-300" />
 
-        {/* Header */}
-        <div className="flex items-start justify-between gap-3 mb-3">
-          <div className="flex-1 min-w-0">
-            <div className="flex items-center gap-2 mb-1.5">
-              <span className="text-lg leading-none">{provider.flag}</span>
-              <h3 className="font-semibold text-text-primary text-sm leading-tight truncate">
-                {provider.name}
-              </h3>
-            </div>
-            <div className="flex flex-wrap items-center gap-1.5">
-              <TypeBadge type={provider.type} />
-              <CompatBadge compatible={provider.openAICompatible} />
-            </div>
+      {/* Header */}
+      <div className="flex items-start justify-between gap-3 mb-3">
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center gap-2 mb-1.5">
+            <span className="text-lg leading-none">{provider.flag}</span>
+            <h3 className="font-semibold text-text-primary text-sm leading-tight truncate">
+              {provider.name}
+            </h3>
           </div>
-          <span className="text-text-muted group-hover:text-primary transition-colors">
-            <ExternalLink size={14} />
-          </span>
-        </div>
-
-        {/* Highlight */}
-        {provider.highlight && (
-          <div className="mb-3 px-2.5 py-1.5 rounded-lg bg-accent/10 border border-accent/20 text-accent text-xs font-medium">
-            ✦ {provider.highlight}
-          </div>
-        )}
-
-        {/* Featured models */}
-        <div className="mb-3">
-          <p className="text-[10px] font-semibold text-text-muted uppercase tracking-wider mb-1.5">
-            โมเดลหลัก
-          </p>
-          <div className="flex flex-wrap gap-1">
-            {provider.featuredModels.map((m) => (
-              <span
-                key={m}
-                className="px-2 py-0.5 rounded-md text-[11px] bg-surface text-text-secondary border border-border-muted font-mono"
-              >
-                {m}
-              </span>
-            ))}
+          <div className="flex flex-wrap items-center gap-1.5">
+            <TypeBadge type={provider.type} />
+            <CompatBadge compatible={provider.openAICompatible} />
           </div>
         </div>
+        <span className="text-text-muted group-hover:text-primary transition-colors">
+          <ExternalLink size={14} />
+        </span>
+      </div>
 
-        {/* Rate limits */}
-        <div className="mb-3">
-          <p className="text-[10px] font-semibold text-text-muted uppercase tracking-wider mb-1.5">
-            Rate Limits
-          </p>
-          <div className="flex flex-wrap gap-1.5">
-            {provider.limits.map((l) => (
-              <span
-                key={l}
-                className="px-2 py-1 rounded-md text-[11px] bg-secondary/10 text-secondary border border-secondary/20 font-mono"
-              >
-                {l}
-              </span>
-            ))}
-          </div>
+      {/* Highlight */}
+      {provider.highlight && (
+        <div className="mb-3 px-2.5 py-1.5 rounded-lg bg-accent/10 border border-accent/20 text-accent text-xs font-medium">
+          ✦ {provider.highlight}
         </div>
+      )}
 
-        {/* Note */}
-        {provider.note && (
-          <p className="text-[11px] text-text-muted leading-relaxed mb-3">
-            <span className="text-text-muted/60">※ </span>
-            {provider.note}
-          </p>
-        )}
-
-        {/* Footer */}
-        <div className="mt-auto pt-3 border-t border-border flex items-center justify-between">
-          <div className="flex items-center gap-1 text-text-muted hover:text-text-secondary transition-colors">
-            <Globe size={11} />
-            <span className="text-[11px] font-mono truncate max-w-[160px]">
-              {provider.apiUrl.replace("https://", "").split("/")[0]}
-            </span>
-            <CopyButton text={provider.apiUrl} />
-          </div>
-          {provider.docsUrl && (
-            <a
-              href={provider.docsUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-[11px] text-text-muted hover:text-primary transition-colors underline underline-offset-2"
+      {/* Featured models */}
+      <div className="mb-3">
+        <p className="text-[10px] font-semibold text-text-muted uppercase tracking-wider mb-1.5">
+          โมเดลหลัก
+        </p>
+        <div className="flex flex-wrap gap-1">
+          {provider.featuredModels.map((m) => (
+            <span
+              key={m}
+              className="px-2 py-0.5 rounded-md text-[11px] bg-surface text-text-secondary border border-border-muted font-mono"
             >
-              Docs
-            </a>
-          )}
+              {m}
+            </span>
+          ))}
         </div>
-      </article>
-    </Link>
+      </div>
+
+      {/* Rate limits */}
+      <div className="mb-3">
+        <p className="text-[10px] font-semibold text-text-muted uppercase tracking-wider mb-1.5">
+          Rate Limits
+        </p>
+        <div className="flex flex-wrap gap-1.5">
+          {provider.limits.map((l) => (
+            <span
+              key={l}
+              className="px-2 py-1 rounded-md text-[11px] bg-secondary/10 text-secondary border border-secondary/20 font-mono"
+            >
+              {l}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Note */}
+      {provider.note && (
+        <p className="text-[11px] text-text-muted leading-relaxed mb-3">
+          <span className="text-text-muted/60">※ </span>
+          {provider.note}
+        </p>
+      )}
+
+      {/* Footer */}
+      <div className="mt-auto pt-3 border-t border-border flex items-center justify-between">
+        <div
+          className="flex items-center gap-1 text-text-muted hover:text-text-secondary transition-colors"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <Globe size={11} />
+          <span className="text-[11px] font-mono truncate max-w-[160px]">
+            {provider.apiUrl.replace("https://", "").split("/")[0]}
+          </span>
+          <CopyButton text={provider.apiUrl} />
+        </div>
+        {provider.docsUrl && (
+          <a
+            href={provider.docsUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="text-[11px] text-text-muted hover:text-primary transition-colors underline underline-offset-2"
+          >
+            Docs
+          </a>
+        )}
+      </div>
+    </article>
   );
 }
 
