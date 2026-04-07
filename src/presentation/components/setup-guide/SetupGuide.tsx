@@ -1,69 +1,50 @@
-import { PHASES, PROMPT_TEMPLATE } from '../../../domin/data/setup-guide'
-import { Checklist } from './Checklist'
-import { CodeBlock } from './CodeBlock'
-import { PhaseCard } from './PhaseCard'
+import { FileText, Lightbulb, Zap } from "lucide-react";
+import { PHASES, PROMPT_TEMPLATE } from "../../../domin/data/setup-guide";
+import { Checklist } from "./Checklist";
+import { CodeBlock } from "./CodeBlock";
+import { PhaseCard } from "./PhaseCard";
 
 export function SetupGuide() {
   return (
-    <div className="relative min-h-screen bg-[#0a0a0f] text-slate-200">
-      {/* Grid background */}
-      <div
-        className="pointer-events-none fixed inset-0"
-        style={{
-          backgroundImage: `
-            linear-gradient(rgba(110,231,183,0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(110,231,183,0.03) 1px, transparent 1px)
-          `,
-          backgroundSize: '40px 40px',
-        }}
-      />
-
-      <div className="relative z-10 mx-auto max-w-[900px] px-6 py-12">
+    <section className="pt-28 pb-20 px-6">
+      <div className="max-w-[900px] mx-auto">
         {/* Hero */}
-        <div className="relative mb-16 overflow-hidden rounded-2xl border border-[#2a2a3a] bg-gradient-to-br from-emerald-500/5 to-indigo-500/5 px-8 py-12 text-center">
-          {/* Spinning conic gradient */}
-          <div
-            className="pointer-events-none absolute inset-0 animate-spin"
-            style={{
-              animationDuration: '20s',
-              background:
-                'conic-gradient(from 0deg at 50% 50%, transparent 0deg, rgba(110,231,183,0.03) 60deg, transparent 120deg)',
-            }}
-          />
+        <div className="relative glass rounded-3xl px-8 py-14 text-center mb-16 overflow-hidden">
+          {/* Decorative orbs */}
+          <div className="absolute top-0 left-1/4 w-64 h-64 bg-primary/15 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute bottom-0 right-1/4 w-64 h-64 bg-secondary/10 rounded-full blur-3xl pointer-events-none" />
 
-          <span className="relative mb-5 inline-block rounded-full border border-emerald-400/30 bg-emerald-400/10 px-3.5 py-1 font-mono text-[11px] uppercase tracking-widest text-emerald-400">
-            v1.0 — AI Workflow Guide
-          </span>
+          <div className="relative">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-semibold text-primary bg-primary/10 border border-primary/20 mb-6">
+              <Zap className="w-4 h-4" />
+              AI Workflow Guide
+            </span>
 
-          <h1
-            className="relative mb-4 text-4xl font-bold leading-tight md:text-5xl"
-            style={{
-              background: 'linear-gradient(135deg, #fff 30%, #6ee7b7)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-            }}
-          >
-            AI-Consistent
-            <br />
-            Project Setup
-          </h1>
+            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight text-text-primary mb-4">
+              AI-Consistent <span className="gradient-text">Project Setup</span>
+            </h1>
 
-          <p className="relative mx-auto max-w-md text-sm text-slate-500">
-            Complete every phase before prompting — so AI output stays identical across every session
-          </p>
+            <p className="mx-auto max-w-lg text-base text-text-secondary leading-relaxed">
+              Complete every phase before prompting — so AI output stays
+              identical across every session
+            </p>
+          </div>
         </div>
 
         {/* Why box */}
-        <div className="mb-12 rounded-xl border border-amber-400/20 border-l-[3px] border-l-amber-400 bg-amber-400/5 px-6 py-5">
-          <h3 className="mb-2 font-mono text-[11px] uppercase tracking-wider text-amber-400">
-            ⚡ Why does this matter?
-          </h3>
-          <p className="text-sm leading-relaxed text-slate-400">
-            AI has no memory between sessions — every new prompt starts from zero. Without complete
-            context, AI guesses everything: libraries, patterns, naming conventions. The result is
-            code that looks different every time even with the same prompt.{' '}
-            <strong className="text-amber-400">
+        <div className="glass rounded-2xl border-l-[3px] border-l-warning px-6 py-5 mb-12">
+          <div className="flex items-center gap-2 mb-2">
+            <Lightbulb className="w-4 h-4 text-warning" />
+            <h3 className="font-mono text-[11px] uppercase tracking-wider text-warning font-bold">
+              Why does this matter?
+            </h3>
+          </div>
+          <p className="text-sm leading-relaxed text-text-secondary">
+            AI has no memory between sessions — every new prompt starts from
+            zero. Without complete context, AI guesses everything: libraries,
+            patterns, naming conventions. The result is code that looks
+            different every time even with the same prompt.{" "}
+            <strong className="text-warning">
               The fix: inject context before every prompt.
             </strong>
           </p>
@@ -78,17 +59,21 @@ export function SetupGuide() {
         <Checklist />
 
         {/* Prompt Template */}
-        <div className="rounded-2xl border border-pink-500/20 bg-pink-500/[0.03] p-8">
-          <h2 className="mb-1 text-lg font-bold text-pink-400">📋 Standard Prompt Template</h2>
-          <p className="mb-4 text-sm text-slate-500">Copy and fill in the brackets each time</p>
+        <div className="glass rounded-2xl p-8">
+          <div className="flex items-center gap-3 mb-1">
+            <div className="w-10 h-10 rounded-xl bg-accent/10 border border-accent/20 flex items-center justify-center">
+              <FileText className="w-5 h-5 text-accent" />
+            </div>
+            <h2 className="text-lg font-bold text-text-primary">
+              Standard Prompt Template
+            </h2>
+          </div>
+          <p className="text-sm text-text-muted mb-4 ml-[52px]">
+            Copy and fill in the brackets each time
+          </p>
           <CodeBlock code={PROMPT_TEMPLATE} />
         </div>
-
-        {/* Footer */}
-        <footer className="mt-12 text-center font-mono text-xs text-slate-600">
-          AI-Consistent Project Setup Guide — @dan/agent-skills workflow
-        </footer>
       </div>
-    </div>
-  )
+    </section>
+  );
 }

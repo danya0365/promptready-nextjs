@@ -1,33 +1,44 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
+import { Check, Copy } from "lucide-react";
+import { useState } from "react";
 
 interface CodeBlockProps {
-  code: string
+  code: string;
 }
 
 export function CodeBlock({ code }: CodeBlockProps) {
-  const [copied, setCopied] = useState(false)
+  const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
-    await navigator.clipboard.writeText(code)
-    setCopied(true)
-    setTimeout(() => setCopied(false), 1500)
-  }
+    await navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 1500);
+  };
 
   return (
-    <div className="relative mt-3 rounded-xl border border-white/[0.06] bg-[#0d1117] overflow-hidden">
+    <div className="relative mt-3 rounded-xl bg-surface border border-border overflow-hidden">
       <button
         onClick={handleCopy}
-        className="absolute right-3 top-3 z-10 rounded-md border border-white/10 bg-white/5 px-3 py-1 font-mono text-[11px] text-slate-500 transition-all hover:bg-white/10 hover:text-emerald-400"
+        className="absolute right-3 top-3 z-10 flex items-center gap-1.5 rounded-lg border border-border bg-surface-elevated px-3 py-1.5 text-xs font-medium text-text-muted transition-all duration-200 hover:text-primary hover:border-primary/40 cursor-pointer"
       >
-        {copied ? 'copied!' : 'copy'}
+        {copied ? (
+          <>
+            <Check className="w-3.5 h-3.5 text-success" />
+            <span className="text-success">Copied!</span>
+          </>
+        ) : (
+          <>
+            <Copy className="w-3.5 h-3.5" />
+            <span>Copy</span>
+          </>
+        )}
       </button>
-      <pre className="overflow-x-auto p-5 pr-16">
-        <code className="font-mono text-[12.5px] leading-[1.8] text-slate-200 whitespace-pre">
+      <pre className="overflow-x-auto p-5 pr-20">
+        <code className="font-mono text-[13px] leading-[1.8] text-text-primary whitespace-pre">
           {code}
         </code>
       </pre>
     </div>
-  )
+  );
 }

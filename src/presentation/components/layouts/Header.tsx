@@ -18,6 +18,7 @@ interface HeaderProps {
 const DEFAULT_NAV_LINKS: NavLink[] = [
   { label: "Features", href: "#features" },
   { label: "How It Works", href: "#how-it-works" },
+  { label: "Setup Guide", href: "/setup-guide" },
   { label: "Pricing", href: "#pricing" },
   { label: "FAQ", href: "#faq" },
 ];
