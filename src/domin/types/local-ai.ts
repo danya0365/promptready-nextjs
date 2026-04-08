@@ -1,4 +1,4 @@
-export type Capability = "text" | "vision" | "image" | "video";
+export type Capability = "text" | "vision" | "image" | "video" | "audio";
 
 export interface ModelDetail {
   name: string;

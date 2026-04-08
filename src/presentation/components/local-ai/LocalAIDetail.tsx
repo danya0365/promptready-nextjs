@@ -1,4 +1,4 @@
-import { ArrowLeft, ExternalLink, Globe, Layout, Terminal, FileText, ShieldCheck, Cpu, type LucideIcon, Type, Eye, Image as ImageIcon, Video } from "lucide-react";
+import { ArrowLeft, ExternalLink, Globe, Layout, Terminal, FileText, ShieldCheck, Cpu, type LucideIcon, Type, Eye, Image as ImageIcon, Video, Mic } from "lucide-react";
 import Link from "next/link";
 import { LocalAITool, Capability } from "@/src/domin/types/local-ai";
 import { CodeBlock } from "../setup-guide/CodeBlock";
@@ -73,15 +73,16 @@ export default function LocalAIDetail({ tool }: LocalAIDetailProps) {
 
           <section>
             <h2 className="text-xl font-bold text-text-primary mb-6">Capabilities & Support</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
-              {["text", "vision", "image", "video"].map((cap) => {
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              {["text", "vision", "audio", "image", "video"].map((cap) => {
                 const isSupported = tool.capabilities.includes(cap as Capability);
                 const IconComp = {
                   text: Type,
                   vision: Eye,
+                  audio: Mic,
                   image: ImageIcon,
                   video: Video,
-                }[cap as "text" | "vision" | "image" | "video"];
+                }[cap as Capability];
 
                 return (
                   <div
