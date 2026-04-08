@@ -8,6 +8,18 @@ interface Props {
 }
 
 export function GithubWeeklyDetailView({ weekly }: Props) {
+  const formatDate = (dateStr: string) => {
+    try {
+      return new Date(dateStr).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+    } catch (e) {
+      return dateStr;
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background text-text-primary">
       {/* Content wrapper with top padding to clear global header */}
@@ -33,7 +45,7 @@ export function GithubWeeklyDetailView({ weekly }: Props) {
             />
           </div>
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex flex-col justify-end p-8">
-            <p className="text-primary-light font-bold mb-2">{weekly.date}</p>
+            <p className="text-primary-light font-bold mb-2">{formatDate(weekly.date)}</p>
             <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
               {weekly.title}
             </h1>

@@ -6,11 +6,24 @@ export const metadata = {
   description: 'Fastest growing GitHub repositories of the week',
 };
 
-export default async function GithubTrendsPage() {
+export default async function GithubTrendsPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+}) {
+  const resolvedParams = await searchParams;
   const presenter = createServerGithubWeeklyPresenter();
   
+  const query = {
+    page: Number(resolvedParams.page) || 1,
+    perPage: Number(resolvedParams.perPage) || 10,
+    search: typeof resolvedParams.search === 'string' ? resolvedParams.search : undefined,
+    orderBy: (resolvedParams.orderBy as any) || 'date',
+    orderDirection: (resolvedParams.orderDirection as any) || 'desc',
+  };
+
   try {
-    const viewModel = await presenter.getViewModel();
+    const viewModel = await presenter.getViewModel(query);
     return <GithubWeeklyListView weeklies={viewModel.weeklies} />;
   } catch (error) {
     console.error("Error fetching github trends data:", error);

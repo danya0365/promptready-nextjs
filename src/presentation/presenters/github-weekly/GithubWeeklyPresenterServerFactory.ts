@@ -1,9 +1,9 @@
 import { GithubWeeklyPresenter } from './GithubWeeklyPresenter';
-import { MockGithubWeeklyRepository } from '@/src/infrastructure/repositories/mock/MockGithubWeeklyRepository';
+import { StaticGithubWeeklyRepository } from '@/src/infrastructure/repositories/static/StaticGithubWeeklyRepository';
 
 export class GithubWeeklyPresenterServerFactory {
   static create(): GithubWeeklyPresenter {
-    const repository = new MockGithubWeeklyRepository();
+    const repository = new StaticGithubWeeklyRepository();
     return new GithubWeeklyPresenter(repository);
   }
 }
