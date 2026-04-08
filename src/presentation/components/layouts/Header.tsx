@@ -26,6 +26,7 @@ interface HeaderProps {
 }
 
 const DEFAULT_NAV_LINKS: NavLink[] = [
+  { label: "AI Tricks", href: "/tricks" },
   { label: "Guides", href: "/guides" },
   { label: "Setup Guide", href: "/setup-guide" },
   { label: "Local AI", href: "/local-ai" },
