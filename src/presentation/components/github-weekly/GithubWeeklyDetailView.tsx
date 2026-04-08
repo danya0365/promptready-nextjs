@@ -10,21 +10,20 @@ interface Props {
 export function GithubWeeklyDetailView({ weekly }: Props) {
   return (
     <div className="min-h-screen bg-background text-text-primary">
-      {/* Navbar Minimalist */}
-      <div className="sticky top-[72px] z-40 bg-background/80 backdrop-blur-md border-b border-border px-6 py-4">
-        <div className="max-w-4xl mx-auto flex items-center">
+      {/* Content wrapper with top padding to clear global header */}
+      <div className="relative max-w-4xl mx-auto px-6 pt-24 md:pt-32 pb-12">
+        {/* Back Button */}
+        <div className="mb-8">
           <Link 
             href="/github-trends"
-            className="inline-flex items-center gap-2 text-sm font-bold text-text-secondary hover:text-primary transition-colors"
+            className="inline-flex items-center gap-2 text-sm font-bold text-text-secondary hover:text-primary transition-colors w-fit px-4 py-2 -ml-4 rounded-full hover:bg-surface-elevated border border-transparent hover:border-border"
           >
             <ArrowLeft size={16} />
             Back to Trends
           </Link>
         </div>
-      </div>
 
-      {/* Hero Section */}
-      <div className="relative max-w-4xl mx-auto px-6 pt-12 pb-12">
+        {/* Hero Section */}
         <div className="rounded-3xl overflow-hidden glass border border-border relative mb-12 shadow-2xl animate-fade-in shadow-primary/5">
           <div className="aspect-[21/9] sm:aspect-[24/9]">
             <img 

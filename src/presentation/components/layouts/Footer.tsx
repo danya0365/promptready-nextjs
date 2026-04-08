@@ -21,9 +21,8 @@ const DEFAULT_LINK_GROUPS: FooterLinkGroup[] = [
     title: "Guides",
     links: [
       { label: "All Guides", href: "/guides" },
-      { label: "Setup Guide", href: "/setup-guide" },
       { label: "Free LLM APIs", href: "/llm-directory" },
-      { label: "FAQ", href: "/faq" },
+      { label: "Tricks", href: "/tricks" },
     ],
   },
   {

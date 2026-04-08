@@ -31,8 +31,6 @@ const DEFAULT_NAV_LINKS: NavLink[] = [
   { label: "GitHub Trends", href: "/github-trends" },
   { label: "Local AI", href: "/local-ai" },
   { label: "Free LLMs", href: "/llm-directory" },
-  { label: "Contribute", href: "/contribute" },
-  { label: "FAQ", href: "/faq" },
 ];
 
 export default function Header({

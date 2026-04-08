@@ -1,5 +1,5 @@
-import { MockGithubWeeklyRepository } from '@/src/infrastructure/repositories/mock/MockGithubWeeklyRepository';
 import { GithubWeeklyListView } from '@/src/presentation/components/github-weekly/GithubWeeklyListView';
+import { createServerGithubWeeklyPresenter } from '@/src/presentation/presenters/github-weekly/GithubWeeklyPresenterServerFactory';
 
 export const metadata = {
   title: 'Top 10 GitHub Trends',
@@ -7,8 +7,17 @@ export const metadata = {
 };
 
 export default async function GithubTrendsPage() {
-  const repository = new MockGithubWeeklyRepository();
-  const weeklies = await repository.getAll();
-
-  return <GithubWeeklyListView weeklies={weeklies} />;
+  const presenter = createServerGithubWeeklyPresenter();
+  
+  try {
+    const viewModel = await presenter.getViewModel();
+    return <GithubWeeklyListView weeklies={viewModel.weeklies} />;
+  } catch (error) {
+    console.error("Error fetching github trends data:", error);
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <p className="text-muted text-text-secondary">Error loading data.</p>
+      </div>
+    );
+  }
 }
