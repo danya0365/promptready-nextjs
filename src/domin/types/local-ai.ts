@@ -1,3 +1,12 @@
+export type Capability = "text" | "vision" | "image" | "video";
+
+export interface ModelDetail {
+  name: string;
+  capabilities: Capability[];
+  description: string;
+  size?: string;
+}
+
 export interface LocalAIStep {
   title: string;
   description?: string;
@@ -22,6 +31,8 @@ export interface LocalAITool {
   websiteUrl: string;
   features: string[];
   platforms: ("macOS" | "Windows" | "Linux")[];
+  capabilities: Capability[];
+  popularModels: ModelDetail[];
   setupGuide: {
     prerequisites?: string[];
     steps: LocalAIStep[];

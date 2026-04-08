@@ -11,10 +11,37 @@ export const LOCAL_AI_TOOLS: LocalAITool[] = [
     downloadUrl: "https://ollama.com/download",
     websiteUrl: "https://ollama.com",
     platforms: ["macOS", "Windows", "Linux"],
+    capabilities: ["text", "vision"],
+    popularModels: [
+      {
+        name: "Llama 3.2",
+        capabilities: ["text"],
+        size: "1B, 3B",
+        description: "Meta's latest efficient model for everyday tasks.",
+      },
+      {
+        name: "Llama 3.2 Vision",
+        capabilities: ["text", "vision"],
+        size: "11B",
+        description: "Powerful multimodal model that can 'see' and describe images.",
+      },
+      {
+        name: "Mistral",
+        capabilities: ["text"],
+        size: "7B",
+        description: "The classic high-performance open-weight model.",
+      },
+      {
+        name: "DeepSeek R1",
+        capabilities: ["text"],
+        size: "7B - 671B",
+        description: "State-of-the-art reasoning model with 'Thinking' process.",
+      },
+    ],
     features: [
       "Simple CLI interface",
       "Local REST API (port 11434)",
-      "Large model library (llama3, phi3, mistral, etc.)",
+      "Large model library (ollama.com/library)",
       "Automatic GPU acceleration",
     ],
     setupGuide: {
@@ -32,8 +59,8 @@ export const LOCAL_AI_TOOLS: LocalAITool[] = [
         },
         {
           title: "Run your first model",
-          description: "Download and run the Llama 3 model directly from the CLI.",
-          code: "ollama run llama3",
+          description: "Download and run the Llama 3.2 model directly from the CLI.",
+          code: "ollama run llama3.2",
           language: "bash",
         },
       ],
@@ -47,8 +74,8 @@ export const LOCAL_AI_TOOLS: LocalAITool[] = [
           language: "bash",
         },
         {
-          label: "Pull a specific model",
-          code: "ollama pull gemma:2b",
+          label: "Pull a vision model",
+          code: "ollama run llama3.2-vision",
           language: "bash",
         },
       ],
@@ -64,6 +91,27 @@ export const LOCAL_AI_TOOLS: LocalAITool[] = [
     downloadUrl: "https://lmstudio.ai",
     websiteUrl: "https://lmstudio.ai",
     platforms: ["macOS", "Windows", "Linux"],
+    capabilities: ["text", "vision"],
+    popularModels: [
+      {
+        name: "Qwen 2.5",
+        capabilities: ["text"],
+        size: "0.5B - 72B",
+        description: "Alibaba's top-tier open models, great for coding and math.",
+      },
+      {
+        name: "Llama 3.1 GGUF",
+        capabilities: ["text"],
+        size: "8B, 70B",
+        description: "The most popular base for local LLMs in GGUF format.",
+      },
+      {
+        name: "Moondream 2",
+        capabilities: ["text", "vision"],
+        size: "1.6B",
+        description: "Tiny but efficient vision model for image captioning.",
+      },
+    ],
     features: [
       "Intuitive Chat UI",
       "Direct Hugging Face search",
@@ -98,6 +146,66 @@ export const LOCAL_AI_TOOLS: LocalAITool[] = [
     },
   },
   {
+    id: "draw-things",
+    slug: "draw-things",
+    name: "Draw Things (AI Image Gen)",
+    tagline: "State-of-the-art AI image generation for macOS and iOS.",
+    description: "Draw Things is a fast, offline AI image generator based on Stable Diffusion. It's highly optimized for Apple Silicon (Metal) and allows you to generate images locally without any cloud subscription.",
+    iconName: "Layout",
+    downloadUrl: "https://drawthings.ai",
+    websiteUrl: "https://drawthings.ai",
+    platforms: ["macOS"],
+    capabilities: ["image"],
+    popularModels: [
+      {
+        name: "Flux.1 [dev/schnell]",
+        capabilities: ["image"],
+        size: "12B",
+        description: "Incredible prompt adherence and photorealism.",
+      },
+      {
+        name: "Stable Diffusion XL",
+        capabilities: ["image"],
+        size: "2.3B",
+        description: "High-resolution output with deep community support (LoRAs).",
+      },
+      {
+        name: "SD 1.5",
+        capabilities: ["image"],
+        size: "800MB",
+        description: "Ultra-fast generation for low-end hardware.",
+      },
+    ],
+    features: [
+      "Full Control over Samplers & Steps",
+      "Support for LoRA and ControlNet",
+      "In-painting and Out-painting",
+      "In-app model downloader",
+    ],
+    setupGuide: {
+      steps: [
+        {
+          title: "Install from App Store",
+          description: "Search for 'Draw Things' in the Mac App Store or download from their website.",
+        },
+        {
+          title: "Select Initial Model",
+          description: "On first launch, the app will ask to download a base model. We recommend Stable Diffusion XL or Flux.1 Schnell.",
+        },
+      ],
+    },
+    usageGuide: {
+      overview: "Enter a text prompt at the bottom, adjust settings on the side, and click 'Generate'. Everything stays 100% on your device.",
+      examples: [
+        {
+          label: "Positive Prompt",
+          code: "A futuristic city with cyberpunk neon lights, highly detailed, 8k",
+          language: "text",
+        },
+      ],
+    },
+  },
+  {
     id: "anything-llm",
     slug: "anything-llm",
     name: "AnythingLLM",
@@ -107,6 +215,19 @@ export const LOCAL_AI_TOOLS: LocalAITool[] = [
     downloadUrl: "https://useanything.com/download",
     websiteUrl: "https://useanything.com",
     platforms: ["macOS", "Windows", "Linux"],
+    capabilities: ["text", "vision"],
+    popularModels: [
+      {
+        name: "AnythingLLM Native",
+        capabilities: ["text"],
+        description: "Proprietary fast inference for immediate use.",
+      },
+      {
+        name: "Ollama Connector",
+        capabilities: ["text", "vision"],
+        description: "Connect to Ollama to use any model from the Ollama library.",
+      },
+    ],
     features: [
       "Built-in RAG capabilities",
       "Multi-user support",
@@ -150,6 +271,21 @@ export const LOCAL_AI_TOOLS: LocalAITool[] = [
     downloadUrl: "https://jan.ai/download",
     websiteUrl: "https://jan.ai",
     platforms: ["macOS", "Windows", "Linux"],
+    capabilities: ["text", "vision"],
+    popularModels: [
+      {
+        name: "Mistral NeMo",
+        capabilities: ["text"],
+        size: "12B",
+        description: "Collaboration between NVIDIA and Mistral, great context window.",
+      },
+      {
+        name: "Llama 3.1",
+        capabilities: ["text"],
+        size: "8B",
+        description: "Standard model for reliable chat assistance.",
+      },
+    ],
     features: [
       "100% Open Source",
       "Privacy-first (no telemetry)",
@@ -189,6 +325,19 @@ export const LOCAL_AI_TOOLS: LocalAITool[] = [
     downloadUrl: "https://gpt4all.io",
     websiteUrl: "https://gpt4all.io",
     platforms: ["macOS", "Windows", "Linux"],
+    capabilities: ["text"],
+    popularModels: [
+      {
+        name: "Llama 3.2 3B",
+        capabilities: ["text"],
+        description: "Perfect for CPU-only inference on laptops.",
+      },
+      {
+        name: "Orca 2",
+        capabilities: ["text"],
+        description: "Fine-tuned by Microsoft for reasoning performance.",
+      },
+    ],
     features: [
       "CPU-only optimization",
       "Works on 8GB RAM laptops",

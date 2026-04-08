@@ -1,6 +1,6 @@
-import { ArrowLeft, ExternalLink, Globe, Layout, Terminal, FileText, ShieldCheck, Cpu, type LucideIcon } from "lucide-react";
+import { ArrowLeft, ExternalLink, Globe, Layout, Terminal, FileText, ShieldCheck, Cpu, type LucideIcon, Type, Eye, Image as ImageIcon, Video } from "lucide-react";
 import Link from "next/link";
-import { LocalAITool } from "@/src/domin/types/local-ai";
+import { LocalAITool, Capability } from "@/src/domin/types/local-ai";
 import { CodeBlock } from "../setup-guide/CodeBlock";
 
 const ICON_MAP: Record<string, LucideIcon> = {
@@ -69,6 +69,80 @@ export default function LocalAIDetail({ tool }: LocalAIDetailProps) {
             <p className="text-text-secondary leading-relaxed">
               {tool.description}
             </p>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-text-primary mb-6">Capabilities & Support</h2>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
+              {["text", "vision", "image", "video"].map((cap) => {
+                const isSupported = tool.capabilities.includes(cap as Capability);
+                const IconComp = {
+                  text: Type,
+                  vision: Eye,
+                  image: ImageIcon,
+                  video: Video,
+                }[cap as "text" | "vision" | "image" | "video"];
+
+                return (
+                  <div
+                    key={cap}
+                    className={`flex items-center gap-3 p-4 rounded-xl border transition-all ${
+                      isSupported
+                        ? "bg-primary/5 border-primary/20 text-text-primary shadow-sm"
+                        : "bg-surface/50 border-border opacity-40 grayscale"
+                    }`}
+                  >
+                    <div className={isSupported ? "text-primary" : "text-text-muted"}>
+                      <IconComp className="w-5 h-5" />
+                    </div>
+                    <span className="text-sm font-semibold capitalize">{cap}</span>
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-bold text-text-primary mb-6">Popular Models</h2>
+            <div className="glass rounded-2xl overflow-hidden border border-white/5 overflow-x-auto">
+              <table className="w-full text-left text-sm min-w-[600px]">
+                <thead className="bg-surface-elevated/50 text-text-muted border-b border-border">
+                  <tr>
+                    <th className="px-6 py-4 font-bold uppercase tracking-wider">Model Name</th>
+                    <th className="px-6 py-4 font-bold uppercase tracking-wider">Type</th>
+                    <th className="px-6 py-4 font-bold uppercase tracking-wider">Size</th>
+                    <th className="px-6 py-4 font-bold uppercase tracking-wider">Best For</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-border/50">
+                  {tool.popularModels.map((model, i) => (
+                    <tr key={i} className="hover:bg-white/5 transition-colors">
+                      <td className="px-6 py-4 font-bold text-text-primary whitespace-nowrap">
+                        {model.name}
+                      </td>
+                      <td className="px-6 py-4">
+                        <div className="flex gap-1.5 flex-wrap">
+                          {model.capabilities.map((c) => (
+                            <span
+                              key={c}
+                              className="text-[10px] px-2 py-0.5 rounded-md bg-surface border border-border text-text-muted capitalize whitespace-nowrap"
+                            >
+                              {c}
+                            </span>
+                          ))}
+                        </div>
+                      </td>
+                      <td className="px-6 py-4 text-text-secondary whitespace-nowrap">
+                        {model.size || "-"}
+                      </td>
+                      <td className="px-6 py-4 text-text-muted italic text-[13px]">
+                        {model.description}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
           </section>
 
           <section>
