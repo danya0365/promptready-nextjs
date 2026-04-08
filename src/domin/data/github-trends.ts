@@ -134,5 +134,94 @@ export const GITHUB_TRENDS_DATA: GithubWeekly[] = [
       { id: "r29", name: "jest-to-vitest", description: "Automated codemod to migrate your test suite to Vitest.", url: "https://github.com/example/jest-to-vitest", starsGained: 1100, language: "JavaScript" },
       { id: "r30", name: "font-subsetter", description: "Reduce font bundle sizes by subsetting glyphs intelligently.", url: "https://github.com/example/font-subsetter", starsGained: 1000, language: "Python" }
     ]
-  }
+  },
+  {
+  "slug": "week-2-april-2026",
+  "title": "10 Fastest Growing Repos - Week 2 April '26",
+  "description": "Automated analysis of the fastest growing repositories this week. (Edit this description)",
+  "coverImage": "/images/github-trends/cover-cyber-tech.png",
+  "date": "2026-04-08T17:08:57.748Z",
+  "repos": [
+    {
+      "id": "r1775668138537-0",
+      "name": "mempalace",
+      "description": "The highest-scoring AI memory system ever benchmarked. And it's free.",
+      "url": "https://github.com/milla-jovovich/mempalace",
+      "starsGained": 25157,
+      "language": "Python"
+    },
+    {
+      "id": "r1775668138537-1",
+      "name": "career-ops",
+      "description": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.",
+      "url": "https://github.com/santifer/career-ops",
+      "starsGained": 23001,
+      "language": "JavaScript"
+    },
+    {
+      "id": "r1775668138537-2",
+      "name": "graphify",
+      "description": "AI coding assistant skill (Claude Code, Codex, OpenCode, OpenClaw, Factory Droid). Turn any folder of code, docs, papers, or images into a queryable knowledge graph",
+      "url": "https://github.com/safishamsi/graphify",
+      "starsGained": 11458,
+      "language": "Python"
+    },
+    {
+      "id": "r1775668138537-3",
+      "name": "caveman",
+      "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
+      "url": "https://github.com/JuliusBrussee/caveman",
+      "starsGained": 7153,
+      "language": "Python"
+    },
+    {
+      "id": "r1775668138537-4",
+      "name": "claw-code-parity",
+      "description": "Join Discord: https://discord.gg/5TUQKqFWd /  claw-code Rust port parity work - it is temporary work while claw-code repo is doing migration",
+      "url": "https://github.com/ultraworkers/claw-code-parity",
+      "starsGained": 6621,
+      "language": "Rust"
+    },
+    {
+      "id": "r1775668138537-5",
+      "name": "autoagent",
+      "description": "autonomous harness engineering",
+      "url": "https://github.com/kevinrgu/autoagent",
+      "starsGained": 3874,
+      "language": "Python"
+    },
+    {
+      "id": "r1775668138537-6",
+      "name": "nuwa-skill",
+      "description": "你想蒸馏的下一个员工，何必是同事。蒸馏任何人的思维方式——心智模型、决策启发式、表达DNA。Distill how anyone thinks.",
+      "url": "https://github.com/alchaincyf/nuwa-skill",
+      "starsGained": 3730,
+      "language": "Python"
+    },
+    {
+      "id": "r1775668138537-7",
+      "name": "clicky",
+      "description": "No description provided.",
+      "url": "https://github.com/farzaa/clicky",
+      "starsGained": 1928,
+      "language": "Swift"
+    },
+    {
+      "id": "r1775668138537-8",
+      "name": "METATRON",
+      "description": "AI-powered penetration testing assistant using local LLM on linux (Parrot OS)",
+      "url": "https://github.com/sooryathejas/METATRON",
+      "starsGained": 1854,
+      "language": "Python"
+    },
+    {
+      "id": "r1775668138537-9",
+      "name": "badclaude",
+      "description": "No description provided.",
+      "url": "https://github.com/GitFrog1111/badclaude",
+      "starsGained": 1421,
+      "language": "HTML"
+    }
+  ]
+}
 ];
