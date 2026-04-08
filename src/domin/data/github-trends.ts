@@ -5,7 +5,7 @@ export const GITHUB_TRENDS_DATA: GithubWeekly[] = [
     slug: "week-1-april-2026",
     title: "10 Fastest Growing Repos - Week 1 April '26",
     description: "Discover the latest breakthrough open source AI and DevTools projects that took the GitHub community by storm this week.",
-    coverImage: "/images/github-trends/cover-cyber-tech.png",
+    coverImage: "/images/github-trends/cover-1.png",
     date: "2026-04-07T00:00:00+00:00",
     repos: [
       {
@@ -94,7 +94,7 @@ export const GITHUB_TRENDS_DATA: GithubWeekly[] = [
     slug: "week-4-march-2026",
     title: "10 Fastest Growing Repos - Week 4 March '26",
     description: "From lightweight state management to heavy-duty data processing, here are the repos making waves.",
-    coverImage: "/images/github-trends/cover-abstract-glass.png",
+    coverImage: "/images/github-trends/cover-2.png",
     date: "2026-03-31T00:00:00+00:00",
     repos: [
       {
@@ -120,7 +120,7 @@ export const GITHUB_TRENDS_DATA: GithubWeekly[] = [
     slug: "week-3-march-2026",
     title: "10 Fastest Growing Repos - Week 3 March '26",
     description: "The week of automation and productivity! See the tools developers are adopting.",
-    coverImage: "/images/github-trends/cover-minimalist.png",
+    coverImage: "/images/github-trends/cover-3.png",
     date: "2026-03-24T00:00:00+00:00",
     repos: [
       { id: "r21", name: "cron-hero", description: "Visual crontab editor that prevents you from making mistakes.", url: "https://github.com/example/cron-hero", starsGained: 3500, language: "Vue" },
@@ -139,7 +139,7 @@ export const GITHUB_TRENDS_DATA: GithubWeekly[] = [
   "slug": "week-2-april-2026",
   "title": "10 Fastest Growing Repos - Week 2 April '26",
   "description": "Automated analysis of the fastest growing repositories this week. (Edit this description)",
-  "coverImage": "/images/github-trends/cover-cyber-tech.png",
+  "coverImage": "/images/github-trends/cover-1.png",
   "date": "2026-04-08T17:08:57.748Z",
   "repos": [
     {

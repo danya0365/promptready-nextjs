@@ -37,14 +37,20 @@ async function fetchTrends() {
     const monthName = now.toLocaleString('en-US', { month: 'long' });
     const year = now.getFullYear();
     
-    const slug = `week-${weekNumber}-${monthName.toLowerCase()}-${year}`;
-    const title = `10 Fastest Growing Repos - Week ${weekNumber} ${monthName} '${String(year).slice(-2)}`;
+    // Generate deterministic cover image (1-6)
+    const week = Math.ceil(now.getDate() / 7);
+    const month = now.getMonth();
+    const coverIndex = ((week + month) % 6) + 1;
+    const coverImage = `/images/github-trends/cover-${coverIndex}.png`;
+    
+    const slug = `week-${week}-${monthName.toLowerCase()}-${year}`;
+    const title = `10 Fastest Growing Repos - Week ${week} ${monthName} '${String(year).slice(-2)}`;
     
     const weekObj = {
       slug,
       title,
       description: "Automated analysis of the fastest growing repositories this week. (Edit this description)",
-      coverImage: "/images/github-trends/placeholder.png",
+      coverImage: coverImage,
       date: now.toISOString(),
       repos: data.items.map((repo, idx) => ({
         id: `r${Date.now()}-${idx}`,
