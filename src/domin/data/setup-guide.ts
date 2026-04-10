@@ -22,24 +22,21 @@ export const PHASES: Phase[] = [
           '--app = App Router (Next.js 14+). Without it, AI may generate Pages Router code. --import-alias "@/*" prevents AI from using deep relative imports like ../../../. Official template = correct structure, no fixes needed later.',
       },
       {
-        label: "1.2",
-        title: "Install Core Dependencies Immediately",
-        code: `# State & Data
-npm install zustand @tanstack/react-query
+        label: '1.2',
+        title: 'Install Core Dependencies Immediately',
+        code: `# State & Validation
+yarn add zustand zod dayjs
 
-# Validation
-npm install zod
+# UI & UX (Theme, Animation, Icons, Print)
+yarn add next-themes react-spring lucide-react react-to-print
 
-# UI Utilities
-npm install clsx tailwind-merge class-variance-authority
+# Forms & Styles
+yarn add react-hook-form clsx tailwind-merge
 
-# Icons
-npm install lucide-react
-
-# Supabase (if using)
-npm install @supabase/supabase-js @supabase/ssr`,
+# Optional: Logic & Auth
+yarn add @tanstack/react-query class-variance-authority @supabase/supabase-js @supabase/ssr`,
         whyNote:
-          "AI generates code based on what is in package.json. Without locking these first, AI may choose axios over fetch, or redux over zustand — making code inconsistent across sessions.",
+          'AI generates code based on what is in package.json. By locking these libraries (State, Form, Animation, Theme, etc.) first, you ensure AI uses the correct patterns (zustand vs redux, react-hook-form vs state) consistently across every session.',
       },
     ],
   },
@@ -273,7 +270,7 @@ export const CHECKLIST_GROUPS: ChecklistGroup[] = [
       },
       {
         id: "c2",
-        label: "Installed core dependencies (zustand, zod, CVA, lucide)",
+        label: "Installed core dependencies (next-themes, hook-form, zustand, zod, etc.)",
       },
       { id: "c3", label: "Ran npx @dan/agent-skills init" },
       { id: "c4", label: "Ran uipro init --ai all" },
