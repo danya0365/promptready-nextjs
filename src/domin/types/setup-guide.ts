@@ -43,3 +43,4 @@ export type PhaseColor =
   | 'phase5'
   | 'phase6'
   | 'phase7'
+  | 'phase8'

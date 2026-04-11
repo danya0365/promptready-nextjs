@@ -268,6 +268,28 @@ test:     add / update tests`,
       },
     ],
   },
+  {
+    id: "phase8",
+    num: "08",
+    title: "Initialize Project Blueprint",
+    subtitle: "Define explicit AI instructions before generation",
+    colorKey: "phase8",
+    steps: [
+      {
+        label: "8.1",
+        title: "Create INIT_PROJECT.md",
+        code: `Please create a new file at:
+
+.agents/INIT_PROJECT.md
+
+Based on the template: .agents/skills/init-project/SKILL.md
+
+IMPORTANT: You must ALWAYS ask for clarification and requirements via prompt before generating any content. Do NOT make assumptions or decide the project structure on your own.`,
+        whyNote:
+          "Force the AI to engage in a planning/asking phase before writing any project code, ensuring it follows the specific init-project skill guidelines without making assumptions.",
+      },
+    ],
+  },
 ];
 
 export const CHECKLIST_GROUPS: ChecklistGroup[] = [
@@ -291,6 +313,7 @@ export const CHECKLIST_GROUPS: ChecklistGroup[] = [
       },
       { id: "c6", label: "Have .agents/design-system.md ready" },
       { id: "c16", label: "Created AGENTS.md for AI discovery" },
+      { id: "c17", label: "Created .agents/INIT_PROJECT.md for bootstrapping" },
       { id: "c7", label: "Created .env.example with all keys" },
       { id: "c8", label: "Enabled TypeScript strict mode in tsconfig.json" },
       { id: "c9", label: "Set up .prettierrc and ESLint config" },
@@ -363,5 +386,10 @@ export const PHASE_COLORS: Record<
     text: "text-primary-light",
     bg: "bg-primary-light/10",
     border: "border-primary-light/20",
+  },
+  phase8: {
+    text: "text-accent",
+    bg: "bg-accent/10",
+    border: "border-accent/20",
   },
 };
