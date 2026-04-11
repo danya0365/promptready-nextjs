@@ -49,15 +49,15 @@ yarn add @tanstack/react-query class-variance-authority @supabase/supabase-js @s
     steps: [
       {
         label: "2.1",
-        title: "Init @dan/agent-skills",
-        code: "npx @dan/agent-skills init",
+        title: "Init @dan/agent-patterns",
+        code: "npx @dan/agent-patterns init",
         whyNote:
-          "Creates a .agent/ folder with SKILL.md in your repo. AI reads these files before generating code — it knows which files go where, preventing components from landing in the wrong folder.",
+          "Creates a .agents/ folder with SKILL.md in your repo. AI reads these files before generating code — it knows which files go where, preventing components from landing in the wrong folder.",
       },
       {
         label: "2.2",
-        title: "Create .agent/CONTEXT.md (Critical)",
-        code: `# .agent/CONTEXT.md
+        title: "Create .agents/CONTEXT.md (Critical)",
+        code: `# .agents/CONTEXT.md
 
 ## Tech Stack
 - Framework: Next.js 14 (App Router)
@@ -98,6 +98,17 @@ src/
           { type: "allow", text: "Always specify return type in functions" },
         ],
       },
+      {
+        label: "2.3",
+        title: "Create AGENTS.md (Entry Point)",
+        code: `# AGENTS.md
+
+# Project Patterns & Skills
+- **Agent Skills:** [./.agents/skills/](./.agents/skills/)
+- **Instruction:** Before starting any work, you MUST check the \`.agents/skills/\` directory. If a relevant \`SKILL.md\` exists, you must follow it.`,
+        whyNote:
+          "AGENTS.md is the entry point for AI tools. By linking it to your skills folder, you ensure the AI discovers and uses your custom patterns automatically.",
+      },
     ],
   },
   {
@@ -116,14 +127,14 @@ src/
       },
       {
         label: "3.2",
-        title: "Save Design Spec to .agent/",
+        title: "Save Design Spec to .agents/",
         code: `# copy output here
-.agent/design-system.md
+.agents/design-system.md
 
 # Every time you gen UI, tell AI:
-"Read .agent/design-system.md first"`,
+"Read .agents/design-system.md first"`,
         whyNote:
-          "Keeping it in .agent/ makes it discoverable for all AI tools in your workflow.",
+          "Keeping it in .agents/ makes it discoverable for all AI tools in your workflow.",
       },
     ],
   },
@@ -272,13 +283,14 @@ export const CHECKLIST_GROUPS: ChecklistGroup[] = [
         id: "c2",
         label: "Installed core dependencies (next-themes, hook-form, zustand, zod, etc.)",
       },
-      { id: "c3", label: "Ran npx @dan/agent-skills init" },
+      { id: "c3", label: "Ran npx @dan/agent-patterns init" },
       { id: "c4", label: "Ran uipro init --ai all" },
       {
         id: "c5",
-        label: "Wrote .agent/CONTEXT.md (stack, folder, naming, rules)",
+        label: "Wrote .agents/CONTEXT.md (stack, folder, naming, rules)",
       },
-      { id: "c6", label: "Have .agent/design-system.md ready" },
+      { id: "c6", label: "Have .agents/design-system.md ready" },
+      { id: "c16", label: "Created AGENTS.md for AI discovery" },
       { id: "c7", label: "Created .env.example with all keys" },
       { id: "c8", label: "Enabled TypeScript strict mode in tsconfig.json" },
       { id: "c9", label: "Set up .prettierrc and ESLint config" },
@@ -289,7 +301,7 @@ export const CHECKLIST_GROUPS: ChecklistGroup[] = [
   {
     title: "Before Every Prompt",
     items: [
-      { id: "c12", label: "Tell AI to read .agent/CONTEXT.md first" },
+      { id: "c12", label: "Tell AI to read .agents/CONTEXT.md first" },
       { id: "c13", label: "Specify the component/feature clearly" },
       { id: "c14", label: "Specify the target folder for the file" },
       {
@@ -300,7 +312,7 @@ export const CHECKLIST_GROUPS: ChecklistGroup[] = [
   },
 ];
 
-export const PROMPT_TEMPLATE = `Read \`.agent/CONTEXT.md\` and \`.agent/design-system.md\` first
+export const PROMPT_TEMPLATE = `Read \`.agents/CONTEXT.md\` and \`.agents/design-system.md\` first
 
 TASK: [create / fix / refactor]
 TARGET: [component / hook / function name]
