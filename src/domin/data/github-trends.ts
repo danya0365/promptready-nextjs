@@ -224,90 +224,90 @@ export const GITHUB_TRENDS_DATA: GithubWeekly[] = [
       }
     ]
   }, {
-    "slug": "week-2-april-2026",
-    "title": "10 Fastest Growing Repos - Week 2 April '26",
-    "description": "Automated analysis of the fastest growing repositories this week. (Edit this description)",
-    "coverImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80",
-    "date": "2026-04-12T15:34:50.213Z",
+    "slug": "past-7-days-2026-04-12",
+    "title": "10 Fastest Growing Repos - Past 7 Days (2026-04-12)",
+    "description": "Automated analysis of the fastest growing repositories from the past 7 days (updated 2026-04-12).",
+    "coverImage": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    "date": "2026-04-12T17:06:50.650Z",
     "repos": [
       {
-        "id": "r1776008091006-0",
+        "id": "r1776013611426-0",
         "name": "clicky",
         "description": "No description provided.",
         "url": "https://github.com/farzaa/clicky",
-        "starsGained": 3883,
+        "starsGained": 3894,
         "language": "Swift"
       },
       {
-        "id": "r1776008091006-1",
+        "id": "r1776013611426-1",
         "name": "awesome-persona-distill-skills",
         "description": "同事.skill, 女娲.skill, 前任.skill… Curated list of Agent Skills centered on people, relationships, commemorative scenes, and methodological perspectives",
         "url": "https://github.com/xixu-me/awesome-persona-distill-skills",
-        "starsGained": 3375,
+        "starsGained": 3387,
         "language": "JavaScript"
       },
       {
-        "id": "r1776008091006-2",
+        "id": "r1776013611426-2",
         "name": "hermes-agent-orange-book",
         "description": "Hermes Agent 从入门到精通 · 橙皮书系列 · Nous Research 开源 AI Agent 框架实战指南",
         "url": "https://github.com/alchaincyf/hermes-agent-orange-book",
-        "starsGained": 2053,
+        "starsGained": 2071,
         "language": "Unknown"
       },
       {
-        "id": "r1776008091006-3",
+        "id": "r1776013611426-3",
         "name": "khazix-skills",
         "description": "数字生命卡兹克开源的 AI Skills 合集",
         "url": "https://github.com/KKKKhazix/khazix-skills",
-        "starsGained": 1693,
+        "starsGained": 1703,
         "language": "Unknown"
       },
       {
-        "id": "r1776008091006-4",
+        "id": "r1776013611426-4",
         "name": "fireworks-tech-graph",
         "description": "Claude Code skill for generating production-quality SVG+PNG technical diagrams. Supports 8 diagram types, 5 visual styles, and deep AI/Agent domain knowledge.",
         "url": "https://github.com/yizhiyanhua-ai/fireworks-tech-graph",
-        "starsGained": 1431,
+        "starsGained": 1476,
         "language": "Python"
       },
       {
-        "id": "r1776008091006-5",
+        "id": "r1776013611426-5",
         "name": "gemma-tuner-multimodal",
         "description": "Fine-tune Gemma 4 and 3n with audio, images and text on Apple Silicon, using PyTorch and Metal Performance Shaders.",
         "url": "https://github.com/mattmireles/gemma-tuner-multimodal",
-        "starsGained": 1211,
+        "starsGained": 1214,
         "language": "Python"
       },
       {
-        "id": "r1776008091006-6",
-        "name": "claude-usage",
-        "description": "A local dashboard for tracking your Claude Code token usage, costs, and session history. Pro and Max subscribers get a progress bar. This gives you the full picture.",
-        "url": "https://github.com/phuryn/claude-usage",
-        "starsGained": 872,
-        "language": "Python"
-      },
-      {
-        "id": "r1776008091006-7",
-        "name": "CodeIsland",
-        "description": "No description provided.",
-        "url": "https://github.com/wxtsky/CodeIsland",
-        "starsGained": 863,
-        "language": "Swift"
-      },
-      {
-        "id": "r1776008091006-8",
+        "id": "r1776013611426-6",
         "name": "llm_wiki",
         "description": "LLM Wiki is a cross-platform desktop application that turns your documents into an organized, interlinked knowledge base — automatically. Instead of traditional RAG (retrieve-and-answer from scratch every time), the LLM incrementally builds and maintains a persistent wiki from your sources。",
         "url": "https://github.com/nashsu/llm_wiki",
-        "starsGained": 852,
+        "starsGained": 877,
         "language": "TypeScript"
       },
       {
-        "id": "r1776008091006-9",
+        "id": "r1776013611426-7",
+        "name": "claude-usage",
+        "description": "A local dashboard for tracking your Claude Code token usage, costs, and session history. Pro and Max subscribers get a progress bar. This gives you the full picture.",
+        "url": "https://github.com/phuryn/claude-usage",
+        "starsGained": 871,
+        "language": "Python"
+      },
+      {
+        "id": "r1776013611426-8",
+        "name": "CodeIsland",
+        "description": "No description provided.",
+        "url": "https://github.com/wxtsky/CodeIsland",
+        "starsGained": 866,
+        "language": "Swift"
+      },
+      {
+        "id": "r1776013611426-9",
         "name": "codex-oauth-automation-extension",
         "description": "Chrome扩展：支持OpenAI OAuth注册、验证码获取、CPA回调验证与自动恢复",
         "url": "https://github.com/QLHazyCoder/codex-oauth-automation-extension",
-        "starsGained": 837,
+        "starsGained": 845,
         "language": "JavaScript"
       }
     ]

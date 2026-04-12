@@ -31,11 +31,8 @@ async function fetchTrends() {
 
     const data = await response.json();
     
-    // Format week metadata
-    const dayOfMonth = now.getDate();
-    const weekNumber = Math.ceil(dayOfMonth / 7);
-    const monthName = now.toLocaleString('en-US', { month: 'long' });
-    const year = now.getFullYear();
+    // Format date metadata
+    const todayStr = now.toISOString().split('T')[0];
     
     // Curated list of high-quality technology/abstract Unsplash image IDs
     const unsplashIds = [
@@ -57,19 +54,19 @@ async function fetchTrends() {
     ];
 
     // Generate deterministic cover image from Unsplash
-    const week = Math.ceil(now.getDate() / 7);
+    const day = now.getDate();
     const month = now.getMonth();
-    const idIndex = (week + month) % unsplashIds.length;
+    const idIndex = (day + month) % unsplashIds.length;
     const selectedId = unsplashIds[idIndex];
     const coverImage = `https://images.unsplash.com/photo-${selectedId}?auto=format&fit=crop&w=1200&q=80`;
     
-    const slug = `week-${week}-${monthName.toLowerCase()}-${year}`;
-    const title = `10 Fastest Growing Repos - Week ${week} ${monthName} '${String(year).slice(-2)}`;
+    const slug = `past-7-days-${todayStr}`;
+    const title = `10 Fastest Growing Repos - Past 7 Days (${todayStr})`;
     
     const weekObj = {
       slug,
       title,
-      description: "Automated analysis of the fastest growing repositories this week. (Edit this description)",
+      description: `Automated analysis of the fastest growing repositories from the past 7 days (updated ${todayStr}).`,
       coverImage: coverImage,
       date: now.toISOString(),
       repos: data.items.map((repo, idx) => ({
