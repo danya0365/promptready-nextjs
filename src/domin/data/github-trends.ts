@@ -136,92 +136,180 @@ export const GITHUB_TRENDS_DATA: GithubWeekly[] = [
     ]
   },
   {
-  "slug": "week-2-april-2026",
-  "title": "10 Fastest Growing Repos - Week 2 April '26",
-  "description": "Automated analysis of the fastest growing repositories this week. (Edit this description)",
-  "coverImage": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-  "date": "2026-04-08T17:08:57.748Z",
-  "repos": [
-    {
-      "id": "r1775668138537-0",
-      "name": "mempalace",
-      "description": "The highest-scoring AI memory system ever benchmarked. And it's free.",
-      "url": "https://github.com/milla-jovovich/mempalace",
-      "starsGained": 25157,
-      "language": "Python"
-    },
-    {
-      "id": "r1775668138537-1",
-      "name": "career-ops",
-      "description": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.",
-      "url": "https://github.com/santifer/career-ops",
-      "starsGained": 23001,
-      "language": "JavaScript"
-    },
-    {
-      "id": "r1775668138537-2",
-      "name": "graphify",
-      "description": "AI coding assistant skill (Claude Code, Codex, OpenCode, OpenClaw, Factory Droid). Turn any folder of code, docs, papers, or images into a queryable knowledge graph",
-      "url": "https://github.com/safishamsi/graphify",
-      "starsGained": 11458,
-      "language": "Python"
-    },
-    {
-      "id": "r1775668138537-3",
-      "name": "caveman",
-      "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
-      "url": "https://github.com/JuliusBrussee/caveman",
-      "starsGained": 7153,
-      "language": "Python"
-    },
-    {
-      "id": "r1775668138537-4",
-      "name": "claw-code-parity",
-      "description": "Join Discord: https://discord.gg/5TUQKqFWd /  claw-code Rust port parity work - it is temporary work while claw-code repo is doing migration",
-      "url": "https://github.com/ultraworkers/claw-code-parity",
-      "starsGained": 6621,
-      "language": "Rust"
-    },
-    {
-      "id": "r1775668138537-5",
-      "name": "autoagent",
-      "description": "autonomous harness engineering",
-      "url": "https://github.com/kevinrgu/autoagent",
-      "starsGained": 3874,
-      "language": "Python"
-    },
-    {
-      "id": "r1775668138537-6",
-      "name": "nuwa-skill",
-      "description": "你想蒸馏的下一个员工，何必是同事。蒸馏任何人的思维方式——心智模型、决策启发式、表达DNA。Distill how anyone thinks.",
-      "url": "https://github.com/alchaincyf/nuwa-skill",
-      "starsGained": 3730,
-      "language": "Python"
-    },
-    {
-      "id": "r1775668138537-7",
-      "name": "clicky",
-      "description": "No description provided.",
-      "url": "https://github.com/farzaa/clicky",
-      "starsGained": 1928,
-      "language": "Swift"
-    },
-    {
-      "id": "r1775668138537-8",
-      "name": "METATRON",
-      "description": "AI-powered penetration testing assistant using local LLM on linux (Parrot OS)",
-      "url": "https://github.com/sooryathejas/METATRON",
-      "starsGained": 1854,
-      "language": "Python"
-    },
-    {
-      "id": "r1775668138537-9",
-      "name": "badclaude",
-      "description": "No description provided.",
-      "url": "https://github.com/GitFrog1111/badclaude",
-      "starsGained": 1421,
-      "language": "HTML"
-    }
-  ]
-}
+    "slug": "week-2-april-2026",
+    "title": "10 Fastest Growing Repos - Week 2 April '26",
+    "description": "Automated analysis of the fastest growing repositories this week. (Edit this description)",
+    "coverImage": "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+    "date": "2026-04-08T17:08:57.748Z",
+    "repos": [
+      {
+        "id": "r1775668138537-0",
+        "name": "mempalace",
+        "description": "The highest-scoring AI memory system ever benchmarked. And it's free.",
+        "url": "https://github.com/milla-jovovich/mempalace",
+        "starsGained": 25157,
+        "language": "Python"
+      },
+      {
+        "id": "r1775668138537-1",
+        "name": "career-ops",
+        "description": "AI-powered job search system built on Claude Code. 14 skill modes, Go dashboard, PDF generation, batch processing.",
+        "url": "https://github.com/santifer/career-ops",
+        "starsGained": 23001,
+        "language": "JavaScript"
+      },
+      {
+        "id": "r1775668138537-2",
+        "name": "graphify",
+        "description": "AI coding assistant skill (Claude Code, Codex, OpenCode, OpenClaw, Factory Droid). Turn any folder of code, docs, papers, or images into a queryable knowledge graph",
+        "url": "https://github.com/safishamsi/graphify",
+        "starsGained": 11458,
+        "language": "Python"
+      },
+      {
+        "id": "r1775668138537-3",
+        "name": "caveman",
+        "description": "🪨 why use many token when few token do trick — Claude Code skill that cuts 65% of tokens by talking like caveman",
+        "url": "https://github.com/JuliusBrussee/caveman",
+        "starsGained": 7153,
+        "language": "Python"
+      },
+      {
+        "id": "r1775668138537-4",
+        "name": "claw-code-parity",
+        "description": "Join Discord: https://discord.gg/5TUQKqFWd /  claw-code Rust port parity work - it is temporary work while claw-code repo is doing migration",
+        "url": "https://github.com/ultraworkers/claw-code-parity",
+        "starsGained": 6621,
+        "language": "Rust"
+      },
+      {
+        "id": "r1775668138537-5",
+        "name": "autoagent",
+        "description": "autonomous harness engineering",
+        "url": "https://github.com/kevinrgu/autoagent",
+        "starsGained": 3874,
+        "language": "Python"
+      },
+      {
+        "id": "r1775668138537-6",
+        "name": "nuwa-skill",
+        "description": "你想蒸馏的下一个员工，何必是同事。蒸馏任何人的思维方式——心智模型、决策启发式、表达DNA。Distill how anyone thinks.",
+        "url": "https://github.com/alchaincyf/nuwa-skill",
+        "starsGained": 3730,
+        "language": "Python"
+      },
+      {
+        "id": "r1775668138537-7",
+        "name": "clicky",
+        "description": "No description provided.",
+        "url": "https://github.com/farzaa/clicky",
+        "starsGained": 1928,
+        "language": "Swift"
+      },
+      {
+        "id": "r1775668138537-8",
+        "name": "METATRON",
+        "description": "AI-powered penetration testing assistant using local LLM on linux (Parrot OS)",
+        "url": "https://github.com/sooryathejas/METATRON",
+        "starsGained": 1854,
+        "language": "Python"
+      },
+      {
+        "id": "r1775668138537-9",
+        "name": "badclaude",
+        "description": "No description provided.",
+        "url": "https://github.com/GitFrog1111/badclaude",
+        "starsGained": 1421,
+        "language": "HTML"
+      }
+    ]
+  }, {
+    "slug": "week-2-april-2026",
+    "title": "10 Fastest Growing Repos - Week 2 April '26",
+    "description": "Automated analysis of the fastest growing repositories this week. (Edit this description)",
+    "coverImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1200&q=80",
+    "date": "2026-04-12T15:34:50.213Z",
+    "repos": [
+      {
+        "id": "r1776008091006-0",
+        "name": "clicky",
+        "description": "No description provided.",
+        "url": "https://github.com/farzaa/clicky",
+        "starsGained": 3883,
+        "language": "Swift"
+      },
+      {
+        "id": "r1776008091006-1",
+        "name": "awesome-persona-distill-skills",
+        "description": "同事.skill, 女娲.skill, 前任.skill… Curated list of Agent Skills centered on people, relationships, commemorative scenes, and methodological perspectives",
+        "url": "https://github.com/xixu-me/awesome-persona-distill-skills",
+        "starsGained": 3375,
+        "language": "JavaScript"
+      },
+      {
+        "id": "r1776008091006-2",
+        "name": "hermes-agent-orange-book",
+        "description": "Hermes Agent 从入门到精通 · 橙皮书系列 · Nous Research 开源 AI Agent 框架实战指南",
+        "url": "https://github.com/alchaincyf/hermes-agent-orange-book",
+        "starsGained": 2053,
+        "language": "Unknown"
+      },
+      {
+        "id": "r1776008091006-3",
+        "name": "khazix-skills",
+        "description": "数字生命卡兹克开源的 AI Skills 合集",
+        "url": "https://github.com/KKKKhazix/khazix-skills",
+        "starsGained": 1693,
+        "language": "Unknown"
+      },
+      {
+        "id": "r1776008091006-4",
+        "name": "fireworks-tech-graph",
+        "description": "Claude Code skill for generating production-quality SVG+PNG technical diagrams. Supports 8 diagram types, 5 visual styles, and deep AI/Agent domain knowledge.",
+        "url": "https://github.com/yizhiyanhua-ai/fireworks-tech-graph",
+        "starsGained": 1431,
+        "language": "Python"
+      },
+      {
+        "id": "r1776008091006-5",
+        "name": "gemma-tuner-multimodal",
+        "description": "Fine-tune Gemma 4 and 3n with audio, images and text on Apple Silicon, using PyTorch and Metal Performance Shaders.",
+        "url": "https://github.com/mattmireles/gemma-tuner-multimodal",
+        "starsGained": 1211,
+        "language": "Python"
+      },
+      {
+        "id": "r1776008091006-6",
+        "name": "claude-usage",
+        "description": "A local dashboard for tracking your Claude Code token usage, costs, and session history. Pro and Max subscribers get a progress bar. This gives you the full picture.",
+        "url": "https://github.com/phuryn/claude-usage",
+        "starsGained": 872,
+        "language": "Python"
+      },
+      {
+        "id": "r1776008091006-7",
+        "name": "CodeIsland",
+        "description": "No description provided.",
+        "url": "https://github.com/wxtsky/CodeIsland",
+        "starsGained": 863,
+        "language": "Swift"
+      },
+      {
+        "id": "r1776008091006-8",
+        "name": "llm_wiki",
+        "description": "LLM Wiki is a cross-platform desktop application that turns your documents into an organized, interlinked knowledge base — automatically. Instead of traditional RAG (retrieve-and-answer from scratch every time), the LLM incrementally builds and maintains a persistent wiki from your sources。",
+        "url": "https://github.com/nashsu/llm_wiki",
+        "starsGained": 852,
+        "language": "TypeScript"
+      },
+      {
+        "id": "r1776008091006-9",
+        "name": "codex-oauth-automation-extension",
+        "description": "Chrome扩展：支持OpenAI OAuth注册、验证码获取、CPA回调验证与自动恢复",
+        "url": "https://github.com/QLHazyCoder/codex-oauth-automation-extension",
+        "starsGained": 837,
+        "language": "JavaScript"
+      }
+    ]
+  }
 ];
