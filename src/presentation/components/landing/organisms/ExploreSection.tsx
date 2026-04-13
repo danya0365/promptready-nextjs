@@ -21,19 +21,27 @@ interface ExploreCard {
 const EXPLORE_CARDS: ExploreCard[] = [
   {
     icon: BookOpen,
-    title: "Setup Guides",
+    title: "AI Workflows",
     description:
-      "Step-by-step guides to prepare your project before prompting AI. Pick your framework and follow along.",
-    href: "/guides",
+      "Step-by-step AI workflows to prepare your project before prompting AI. Pick your framework and follow along.",
+    href: "/ai-workflows",
     color: "primary",
   },
   {
     icon: Zap,
     title: "Free LLM APIs",
     description:
-      "รวม 15+ Free LLM API providers พร้อม setup guide, code examples ทั้ง Python และ TypeScript",
+      "Thai language support for 15+ Free LLM API providers with setup guides and code examples.",
     href: "/llm-directory",
     color: "secondary",
+  },
+  {
+    icon: Zap,
+    title: "Local AI",
+    description:
+      "Run AI models locally on your machine. Setup guides for Ollama, LM Studio, and more.",
+    href: "/local-ai",
+    color: "accent",
   },
   {
     icon: GitFork,

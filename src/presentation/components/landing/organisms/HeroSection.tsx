@@ -30,7 +30,7 @@ export default function HeroSection() {
             className="mt-6 text-lg text-text-secondary leading-relaxed max-w-2xl mx-auto animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
-            A curated collection of setup guides, prompt templates, and workflow
+            A curated collection of AI workflows, prompt templates, and workflow
             patterns — open source and free for every developer. Read, learn,
             and ship better code with AI.
           </p>
@@ -40,11 +40,11 @@ export default function HeroSection() {
             style={{ animationDelay: "0.3s" }}
           >
             <a
-              href="/guides"
+              href="/ai-workflows"
               className="btn-game inline-flex items-center gap-2 text-base px-7 py-3.5"
             >
               <BookOpen className="w-5 h-5" />
-              Browse Guides
+              Browse Workflows
             </a>
             <a
               href="https://github.com/danya0365/promptready-nextjs"
@@ -63,7 +63,7 @@ export default function HeroSection() {
             style={{ animationDelay: "0.4s" }}
           >
             {[
-              { value: "7", label: "Setup Phases" },
+              { value: "7", label: "Workflow Phases" },
               { value: "Free", label: "Always" },
               { value: "OSS", label: "Open Source" },
             ].map((stat) => (
@@ -83,7 +83,7 @@ export default function HeroSection() {
           style={{ animationDelay: "0.5s" }}
         >
           <a
-            href="/setup-guide"
+            href="/ai-workflows/nextjs"
             className="block glass rounded-3xl p-6 card-hover group"
           >
             <div className="flex items-center gap-4">
@@ -100,10 +100,10 @@ export default function HeroSection() {
                   </span>
                 </div>
                 <h3 className="text-base font-bold text-text-primary">
-                  AI-Consistent Project Setup Guide
+                  Next.js AI Workflow
                 </h3>
                 <p className="text-sm text-text-secondary mt-1">
-                  Complete checklist to prepare your Next.js project before
+                  Complete workflow to prepare your Next.js project before
                   prompting AI
                 </p>
               </div>

@@ -20,17 +20,17 @@ export default function CTASection() {
             </h2>
 
             <p className="text-lg text-text-secondary mb-8 max-w-2xl mx-auto">
-              Stop guessing and start shipping consistent code. Pick a setup
-              guide, follow the steps, and let AI work the way you want.
+              Stop guessing and start shipping consistent code. Pick an AI
+              workflow, follow the steps, and let AI work the way you want.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="/setup-guide"
+                href="/ai-workflows/nextjs"
                 className="btn-game inline-flex items-center gap-2 text-base px-8 py-4"
               >
                 <BookOpen className="w-5 h-5" />
-                Read the Guide
+                Try AI Workflow
               </a>
               <a
                 href="https://github.com/danya0365/promptready-nextjs"

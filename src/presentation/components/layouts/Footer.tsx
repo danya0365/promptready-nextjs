@@ -18,9 +18,9 @@ interface FooterProps {
 
 const DEFAULT_LINK_GROUPS: FooterLinkGroup[] = [
   {
-    title: "Guides",
+    title: "AI Workflows",
     links: [
-      { label: "All Guides", href: "/guides" },
+      { label: "All Workflows", href: "/ai-workflows" },
       { label: "Free LLM APIs", href: "/llm-directory" },
       { label: "Tricks", href: "/tricks" },
     ],

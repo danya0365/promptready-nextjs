@@ -27,7 +27,7 @@ interface HeaderProps {
 
 const DEFAULT_NAV_LINKS: NavLink[] = [
   { label: "AI Tricks", href: "/tricks" },
-  { label: "Setup Guides", href: "/guides" },
+  { label: "AI Workflows", href: "/ai-workflows" },
   { label: "GitHub Trends", href: "/github-trends" },
   { label: "Local AI", href: "/local-ai" },
   { label: "Free LLMs", href: "/llm-directory" },
@@ -35,8 +35,8 @@ const DEFAULT_NAV_LINKS: NavLink[] = [
 
 export default function Header({
   navLinks = DEFAULT_NAV_LINKS,
-  ctaLabel = "Browse Guides",
-  ctaHref = "/guides",
+  ctaLabel = "Browse Workflows",
+  ctaHref = "/ai-workflows",
 }: HeaderProps) {
   const [open, setOpen] = useState(false);
   const { setTheme, resolvedTheme } = useTheme();

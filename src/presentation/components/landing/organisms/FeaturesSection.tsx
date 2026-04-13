@@ -21,37 +21,37 @@ interface Guide {
 const GUIDES: Guide[] = [
   {
     icon: Code2,
-    title: "Next.js Setup Guide",
+    title: "Next.js AI Workflow",
     description:
-      "7-phase guide to prepare your Next.js project for AI-consistent development. TypeScript, Tailwind, Supabase.",
-    href: "/setup-guide",
+      "7-phase AI workflow to prepare your Next.js project for AI-consistent development. TypeScript, Tailwind, Supabase.",
+    href: "/ai-workflows/nextjs",
     status: "available",
     tags: ["Next.js", "React", "TypeScript"],
   },
   {
     icon: Server,
-    title: "Laravel Setup Guide",
+    title: "Laravel AI Workflow",
     description:
-      "Complete setup for Laravel projects — Eloquent conventions, API contracts, and AI-friendly structure.",
-    href: "#",
+      "Complete AI workflow for Laravel projects — Eloquent conventions, API contracts, and AI-friendly structure.",
+    href: "/ai-workflows/laravel",
     status: "coming-soon",
     tags: ["Laravel", "PHP", "API"],
   },
   {
     icon: SquareTerminal,
-    title: "NestJS Setup Guide",
+    title: "NestJS AI Workflow",
     description:
       "Prepare your NestJS backend for AI agents — modules, DTOs, validation pipes, and testing patterns.",
-    href: "#",
+    href: "/ai-workflows/nestjs",
     status: "coming-soon",
     tags: ["NestJS", "Node.js", "TypeScript"],
   },
   {
     icon: Smartphone,
-    title: "React Native Setup Guide",
+    title: "React Native AI Workflow",
     description:
       "AI-ready mobile development — navigation, state management, and native module patterns.",
-    href: "#",
+    href: "/ai-workflows/react-native",
     status: "coming-soon",
     tags: ["React Native", "Mobile", "Expo"],
   },
