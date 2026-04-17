@@ -42,17 +42,16 @@ async function fetchTrends() {
       "1518770660439-4636190af475", // Circuit board
       "1550751827-4bd374c3f58b", // Cyber security
       "1485827404703-89b55fcc595e", // AI/Robotics
-      "1488590528505-98d2b5aba04b", // Tech setup abstract
       "1522071820081-009f0129c71c", // Team collaboration
-      "1558494949-ef01017911c5", // Global network
+      "1451187580459-43490279c0fa", // Tech network
       "1531297484001-80022131f5a1", // Futuristic MacBook
       "1677442136019-21780ecad995", // AI head/concept
       "1498050108023-c5249f4df085", // Coding/Coffee
       "1504384308090-c894fdcc538d", // Modern workstation
-      "1620712946848-116d8448ea61", // Abstract AI flow
+      "1526374965328-7f61d4dc18c5", // Tech abstract
       "1555066931-4365d14bab8c", // Code on screen
       "1581091226825-a6a2a5aee158", // Microchip
-      "1525547710722-399a372d98a1", // Tech minimal
+      "1517694712202-14dd9538aa97", // Laptop code
     ];
 
     // Generate deterministic cover image from Unsplash
