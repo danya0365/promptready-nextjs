@@ -589,4 +589,102 @@ export const GITHUB_TRENDS_DATA: GithubWeekly[] = [
       },
     ],
   },
+  {
+    slug: "past-7-days-2026-04-20",
+    title: "10 Fastest Growing Repos - Past 7 Days (2026-04-20)",
+    description:
+      "Automated analysis of the fastest growing repositories from the past 7 days (updated 2026-04-20).",
+    coverImage:
+      "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+    date: "2026-04-20T04:07:59.852Z",
+    repos: [
+      {
+        id: "r1776658080629-0",
+        name: "lingbot-map",
+        description:
+          "A feed-forward 3D foundation model for reconstructing scenes from streaming data",
+        url: "https://github.com/Robbyant/lingbot-map",
+        starsGained: 2700,
+        language: "Python",
+      },
+      {
+        id: "r1776658080629-1",
+        name: "browser-harness",
+        description:
+          "Self-healing browser harness that enables LLMs to complete any task.",
+        url: "https://github.com/browser-use/browser-harness",
+        starsGained: 2456,
+        language: "Python",
+      },
+      {
+        id: "r1776658080629-2",
+        name: "wterm",
+        description: "A terminal emulator for the web",
+        url: "https://github.com/vercel-labs/wterm",
+        starsGained: 2109,
+        language: "TypeScript",
+      },
+      {
+        id: "r1776658080629-3",
+        name: "OpenMythos",
+        description:
+          "A theoretical reconstruction of the Claude Mythos architecture, built from first principles using the available research literature.",
+        url: "https://github.com/kyegomez/OpenMythos",
+        starsGained: 1752,
+        language: "Python",
+      },
+      {
+        id: "r1776658080629-4",
+        name: "RedSun",
+        description: "The Red Sun vulnerability repository",
+        url: "https://github.com/Nightmare-Eclipse/RedSun",
+        starsGained: 1581,
+        language: "C++",
+      },
+      {
+        id: "r1776658080629-5",
+        name: "html-ppt-skill",
+        description:
+          "HTML PPT Studio — AgentSkill with 24 themes, 31 layouts, 20+ animations for building professional HTML presentations",
+        url: "https://github.com/lewislulu/html-ppt-skill",
+        starsGained: 1488,
+        language: "HTML",
+      },
+      {
+        id: "r1776658080629-6",
+        name: "design-extract",
+        description:
+          "Extract any website's complete design system with one command. DTCG tokens, semantic+primitive+composite, MCP server for Claude Code/Cursor/Windsurf, multi-platform emitters (iOS SwiftUI, Android Compose, Flutter, WordPress), Tailwind v4, Figma variables, shadcn/ui, CSS health audit, WCAG remediation, Chrome extension. MIT, Playwright, Node 20+.",
+        url: "https://github.com/Manavarya09/design-extract",
+        starsGained: 1093,
+        language: "JavaScript",
+      },
+      {
+        id: "r1776658080629-7",
+        name: "BuilderPulse",
+        description:
+          "AI-powered daily intelligence for indie hackers and builders. 20 questions, 10+ sources, every morning.",
+        url: "https://github.com/BuilderPulse/BuilderPulse",
+        starsGained: 978,
+        language: "Unknown",
+      },
+      {
+        id: "r1776658080629-8",
+        name: "weft",
+        description: "A programming language for AI systems",
+        url: "https://github.com/WeaveMindAI/weft",
+        starsGained: 884,
+        language: "Rust",
+      },
+      {
+        id: "r1776658080629-9",
+        name: "UZI-Skill",
+        description:
+          "冰冷的钱就这样流进我温暖的口袋-游资（UZI）Skills — 51位投资大佬帮你看盘 · 22维数据 × 180条量化规则 × 17种机构分析方法 · A股/港股/美股 ",
+        url: "https://github.com/wbh604/UZI-Skill",
+        starsGained: 846,
+        language: "Python",
+      },
+    ],
+  },
 ];
