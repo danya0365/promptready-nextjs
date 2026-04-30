@@ -687,4 +687,100 @@ export const GITHUB_TRENDS_DATA: GithubWeekly[] = [
       },
     ],
   },
+  {
+    slug: "past-7-days-2026-04-30",
+    title: "10 Fastest Growing Repos - Past 7 Days (2026-04-30)",
+    description:
+      "Automated analysis of the fastest growing repositories from the past 7 days (updated 2026-04-30).",
+    coverImage:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+    date: "2026-04-30T16:43:26.896Z",
+    repos: [
+      {
+        id: "r1777567407748-0",
+        name: "open-design",
+        description:
+          "🎨 Local-first, open-source alternative to Anthropic's Claude Design. ⚡ 19 Skills · ✨ 71 brand-grade Design Systems · 🖼️ sandboxed preview · 📦 HTML/PDF/PPTX export. 🤖 Runs on Claude Code / Codex / Cursor / Gemini CLI / OpenCode / Qwen / Copilot / Hermes / Kimi CLI.",
+        url: "https://github.com/nexu-io/open-design",
+        starsGained: 7149,
+        language: "TypeScript",
+      },
+      {
+        id: "r1777567407748-1",
+        name: "cookbook",
+        description: "No description provided.",
+        url: "https://github.com/cursor/cookbook",
+        starsGained: 2459,
+        language: "TypeScript",
+      },
+      {
+        id: "r1777567407748-2",
+        name: "awesome-gpt-image-2",
+        description:
+          "Prompt as Code | GPT-Image2 工业级提示词引擎与模板库 - 329个案例逆向工程，13套工业级模板，且不断更新中。",
+        url: "https://github.com/freestylefly/awesome-gpt-image-2",
+        starsGained: 2425,
+        language: "Unknown",
+      },
+      {
+        id: "r1777567407748-3",
+        name: "deepseek_v4_rolepaly_instruct",
+        description: "对于DeepSeek-V4角色扮演的特殊控制指令的说明",
+        url: "https://github.com/victorchen96/deepseek_v4_rolepaly_instruct",
+        starsGained: 1560,
+        language: "Unknown",
+      },
+      {
+        id: "r1777567407748-4",
+        name: "copy-fail-CVE-2026-31431",
+        description: "No description provided.",
+        url: "https://github.com/theori-io/copy-fail-CVE-2026-31431",
+        starsGained: 1457,
+        language: "Python",
+      },
+      {
+        id: "r1777567407748-5",
+        name: "ps5-linux-loader",
+        description:
+          "Linux payload implementing the HV exploit and a custom bootloader",
+        url: "https://github.com/ps5-linux/ps5-linux-loader",
+        starsGained: 744,
+        language: "C",
+      },
+      {
+        id: "r1777567407748-6",
+        name: "Gpt-Agreement-Payment",
+        description:
+          "ChatGPT Plus/Team/Pro 订阅协议端到端重放工具集 · hCaptcha 视觉求解器 · 反欺诈机制实证研究 / End-to-end protocol replay toolkit for ChatGPT Plus/Team/Pro subscription with from-scratch hCaptcha solver and empirical anti-fraud research",
+        url: "https://github.com/DanOps-1/Gpt-Agreement-Payment",
+        starsGained: 716,
+        language: "Python",
+      },
+      {
+        id: "r1777567407748-7",
+        name: "im-not-ai",
+        description: "AI가 쓴 글이 아닌 것처럼 윤문해주는 스킬",
+        url: "https://github.com/epoko77-ai/im-not-ai",
+        starsGained: 666,
+        language: "Python",
+      },
+      {
+        id: "r1777567407748-8",
+        name: "chromex",
+        description:
+          "A Codex-powered Chrome side-panel assistant for page context, tabs, voice, and image workflows.",
+        url: "https://github.com/GENEXIS-AI/chromex",
+        starsGained: 643,
+        language: "TypeScript",
+      },
+      {
+        id: "r1777567407748-9",
+        name: "mike",
+        description: "OSS AI Legal Platform",
+        url: "https://github.com/willchen96/mike",
+        starsGained: 627,
+        language: "TypeScript",
+      },
+    ],
+  },
 ];
