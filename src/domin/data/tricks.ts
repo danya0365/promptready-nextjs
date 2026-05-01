@@ -282,6 +282,165 @@ export const TRICKS: Trick[] = (
       },
       sourceUrl: "https://www.facebook.com/share/p/18e9WC18CR/",
     },
+    {
+      id: "zero-brain-skill-creation",
+      slug: "zero-brain-skill-creation-with-ai",
+      title: "Zero-Brain Skill Creation with AI",
+      description:
+        "Let AI randomly pick one of its own skills, generate content, self-analyze, fix weaknesses, and output a brand-new skill—without you brainstorming anything. Your only job is reviewing the final result and deciding if it needs another loop.",
+      category: "Coding",
+      tags: ["AI", "Skill", "Meta-Prompting", "Automation", "Coding"],
+      difficulty: "Advanced",
+      createdAt: "2026-05-01",
+      steps: [
+        {
+          title: "Step 1: Ask AI to Randomly Pick a Skill",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Instead of thinking of a skill yourself, let the AI do the brainstorming. Prompt it to randomly select one skill it has, or pick from a hidden list.",
+            },
+            {
+              type: "code",
+              content:
+                "Pick one skill you have at random (coding, writing, design, data analysis, etc.).\nTell me the skill name and a one-sentence description.\nDo not ask me what I want—just decide for me.",
+              language: "markdown",
+            },
+            {
+              type: "note",
+              content:
+                "If the AI keeps picking the same skill, add constraints like: 'Pick a skill I have never asked you to use before.'",
+            },
+          ],
+        },
+        {
+          title: "Step 2: Generate Full Content for That Skill",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Once the skill is chosen, instruct the AI to generate a complete piece of content (code, article, analysis, etc.) using that skill—without any further input from you.",
+            },
+            {
+              type: "code",
+              content:
+                "Using the skill you just picked, generate a complete, real-world example.\nMake it production-ready, not a toy demo.\nAssume I am a senior developer reviewing your output.",
+              language: "markdown",
+            },
+            {
+              type: "warning",
+              content:
+                "If the output is too generic, add: 'Be specific. Use real names, real data, and real edge cases.'",
+            },
+          ],
+        },
+        {
+          title: "Step 3: Self-Analyze Pros & Cons",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Now let the AI wear a critic hat. Ask it to list the strengths and weaknesses of the content it just generated.",
+            },
+            {
+              type: "code",
+              content:
+                "Analyze the content you just generated.\nList:\n1. Three strengths (what makes it good).\n2. Three weaknesses (what could break, confuse, or underperform).\n3. One hidden risk a senior reviewer would spot.",
+              language: "markdown",
+            },
+            {
+              type: "note",
+              content:
+                "If the AI is too easy on itself, add: 'Be brutally honest. Assume I will ship this to production tomorrow.'",
+            },
+          ],
+        },
+        {
+          title: "Step 4: Fix the Weaknesses",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Instruct the AI to rewrite the content, directly addressing every weakness it identified in the previous step.",
+            },
+            {
+              type: "code",
+              content:
+                "Rewrite the content from Step 2, fixing every weakness you listed in Step 3.\nDo not just mention the fixes—apply them in the actual code/content.\nReturn the full, updated version.",
+              language: "markdown",
+            },
+            {
+              type: "success",
+              content:
+                "At this point you already have a better version than the first draft—without typing a single idea yourself.",
+            },
+          ],
+        },
+        {
+          title: "Step 5: Extract a Reusable Skill from the Output",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "The final meta-step: ask the AI to inspect the fixed output, abstract the reusable patterns, and package them into a new skill description you can reuse later.",
+            },
+            {
+              type: "code",
+              content:
+                "Review the final content you produced.\nExtract the core techniques, patterns, and rules into a reusable 'skill' definition.\nGive it a name, a one-line purpose, and a prompt template I can copy-paste later.",
+              language: "markdown",
+            },
+            {
+              type: "note",
+              content:
+                "This turns a one-off generation into a reusable asset in your personal skill library.",
+            },
+          ],
+        },
+        {
+          title: "Step 6: Review & Iterate Until Satisfied",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "You are the final gatekeeper. Read the skill and the fixed content. If anything feels off, send it back into the loop starting from Step 3 (re-analyze and fix).",
+            },
+            {
+              type: "code",
+              content:
+                "Feedback: [your brief critique, e.g. 'too verbose', 'missing error handling', 'not beginner-friendly']\n\nRe-analyze this content with the feedback above, fix it, and regenerate the skill definition.",
+              language: "markdown",
+            },
+            {
+              type: "success",
+              content:
+                "You only use your brain for quality control. The AI does all the creative and analytical work.",
+            },
+          ],
+        },
+      ],
+      commonIssues: [
+        {
+          issue: "AI keeps picking the same skill or boring ones",
+          solution:
+            "Add constraints: 'Pick from a domain I have never used' or 'Pick a skill that combines two unrelated domains.'",
+        },
+        {
+          issue: "Generated content is too broad or shallow",
+          solution:
+            "Add scope controls: 'Target this at a senior-level audience' or 'Include at least one real-world edge case and error handling.'",
+        },
+        {
+          issue: "The loop never ends—AI keeps 'fixing' forever",
+          solution:
+            "Set a max iteration limit (e.g., 'Stop after 3 rounds unless I explicitly ask for more') and define 'done' criteria upfront.",
+        },
+      ],
+      author: {
+        name: "Marosdee Uma",
+      },
+    },
   ] as Trick[]
 ).sort(
   (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
