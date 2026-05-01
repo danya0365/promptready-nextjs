@@ -441,6 +441,144 @@ export const TRICKS: Trick[] = (
         name: "Marosdee Uma",
       },
     },
+    {
+      id: "ai-context-switch-recovery",
+      slug: "ai-context-switch-recovery",
+      title: "AI Context-Switch Recovery: Never Lose Your Place Again",
+      description:
+        "Use AI as a persistent memory layer between tasks. Before you switch to another task, save a context snapshot. When you come back, AI restores exactly where you left off—files, decisions, and next steps included.",
+      category: "Productivity",
+      tags: ["AI", "Productivity", "Context", "Workflow", "Memory"],
+      difficulty: "Intermediate",
+      createdAt: "2026-05-01",
+      steps: [
+        {
+          title: "Step 1: Activate Context Keeper Mode",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Start every coding session by assigning AI a single role: Context Keeper. This tells it to track your working state, not just answer questions.",
+            },
+            {
+              type: "code",
+              content:
+                "From now on, you are my Context Keeper.\nYour job:\n1. Track every file I open, modify, or mention.\n2. Record every decision I make and why.\n3. When I say 'save context', produce a compact snapshot I can paste back later.\n4. When I say 'load context', restore my working state from that snapshot.",
+              language: "markdown",
+            },
+            {
+              type: "note",
+              content:
+                "If you are using a persistent chat (e.g., Claude Code), this role stays active across the session. For stateless chats, you must paste the snapshot back every time.",
+            },
+          ],
+        },
+        {
+          title: "Step 2: Save Before You Switch",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Whenever you need to jump to another task—urgent bug, meeting, or Slack ping—tell AI to save a snapshot before you leave.",
+            },
+            {
+              type: "code",
+              content:
+                "Save context.\n\nFormat the snapshot as:\n- Active files (with current line numbers)\n- Decisions made (with reasoning)\n- TODO items left unfinished\n- Next step I was about to take\n\nMake it copy-paste friendly.",
+              language: "markdown",
+            },
+            {
+              type: "success",
+              content:
+                "Copy the snapshot into a note, a scratchpad file, or the chat itself. Now you can safely walk away.",
+            },
+          ],
+        },
+        {
+          title: "Step 3: Load When You Return",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "When you come back—whether in 10 minutes or 3 days—paste the snapshot and tell AI to restore your state.",
+            },
+            {
+              type: "code",
+              content:
+                "Load this context and restore my working state:\n\n[paste your snapshot here]\n\nSummarize in 3 bullets what I was doing, then tell me the exact next action to take.",
+              language: "markdown",
+            },
+            {
+              type: "note",
+              content:
+                "If some files changed while you were away, AI will flag the diff and ask you to reconcile before continuing.",
+            },
+          ],
+        },
+        {
+          title: "Step 4: Maintain a Context Dashboard",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "For power users juggling multiple tasks, keep a running dashboard of all saved contexts with priority and age.",
+            },
+            {
+              type: "code",
+              content:
+                "Show me my context dashboard.\n\nList every saved context with:\n- Task name\n- Last updated timestamp\n- Priority (High / Medium / Low)\n- Status (Active / Stale / Done)\n\nFlag anything older than 3 days as potentially stale.",
+              language: "markdown",
+            },
+            {
+              type: "warning",
+              content:
+                "This dashboard only works if the AI has access to the full conversation history. In stateless mode, maintain the dashboard manually in a text file.",
+            },
+          ],
+        },
+        {
+          title: "Step 5: Auto-Detect Stale Context",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Codebases change. A context saved 3 days ago may reference files that no longer exist. Add a self-check step before restoring old contexts.",
+            },
+            {
+              type: "code",
+              content:
+                "Before restoring this context, verify:\n1. Do all listed files still exist?\n2. Were any of them modified after the snapshot date?\n3. Are there new commits or PRs that might conflict with my old plan?\n\nIf anything looks stale, ask me how to proceed before continuing.",
+              language: "markdown",
+            },
+            {
+              type: "success",
+              content:
+                "You now have a productivity safety net. Switch tasks freely—AI remembers everything so your brain does not have to.",
+            },
+          ],
+        },
+      ],
+      commonIssues: [
+        {
+          issue: "Context snapshot is too long to copy-paste",
+          solution:
+            "Constrain the output: 'Limit to 5 bullet points. Include only file names, not full paths. One-liner per decision.'",
+        },
+        {
+          issue: "AI forgets everything after a new chat or restart",
+          solution:
+            "Use a persistent scratchpad file (e.g., context-snapshots.md) and paste the relevant snapshot back into the chat every time you resume.",
+        },
+        {
+          issue: "Multiple projects overlap and contexts get mixed up",
+          solution:
+            "Prefix every save command with the project name: 'Save context for [ProjectA].' This keeps snapshots isolated and searchable.",
+        },
+      ],
+      author: {
+        name: "Marosdee Uma",
+      },
+    },
   ] as Trick[]
 ).sort(
   (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
