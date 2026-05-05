@@ -43,4 +43,5 @@ export type WorkflowPhaseColor =
   | "phase5"
   | "phase6"
   | "phase7"
-  | "phase8";
+  | "phase8"
+  | "phase9";

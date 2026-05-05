@@ -293,6 +293,51 @@ IMPORTANT: You must ALWAYS ask for clarification and requirements via prompt bef
       },
     ],
   },
+  {
+    id: "phase9",
+    num: "09",
+    title: "AI Code Discipline",
+    subtitle: "Lock AI behavior so it thinks before it codes",
+    colorKey: "phase9",
+    steps: [
+      {
+        label: "9.1",
+        title: "Create AGENTS.md with Andrej Karpathy Rules",
+        code: `# AGENTS.md
+
+## AI Behavioral Guidelines
+
+### 1. Think Before Coding
+- State assumptions explicitly. If uncertain, ask.
+- If multiple interpretations exist, present them — don't pick silently.
+- If a simpler approach exists, say so. Push back when warranted.
+- If something is unclear, stop. Name what's confusing. Ask.
+
+### 2. Simplicity First
+- No features beyond what was asked.
+- No abstractions for single-use code.
+- No "flexibility" or "configurability" that wasn't requested.
+- No error handling for impossible scenarios.
+- If you write 200 lines and it could be 50, rewrite it.
+
+### 3. Surgical Changes
+- Don't "improve" adjacent code, comments, or formatting.
+- Don't refactor things that aren't broken.
+- Match existing style, even if you'd do it differently.
+- Remove imports/variables/functions that YOUR changes made unused.
+- Don't remove pre-existing dead code unless asked.
+
+### 4. Goal-Driven Execution
+- Transform tasks into verifiable goals:
+  - "Add validation" → "Write tests for invalid inputs, then make them pass"
+  - "Fix the bug" → "Write a test that reproduces it, then make it pass"
+  - "Refactor X" → "Ensure tests pass before and after"
+- For multi-step tasks, state a brief plan with verification checks.`,
+        whyNote:
+          "Without behavioral guidelines, AI tends to over-engineer, refactor unrelated code, and assume silently. These rules force the AI to think first, keep changes minimal, and verify outcomes — producing cleaner diffs and fewer rewrites.",
+      },
+    ],
+  },
 ];
 
 export const WORKFLOW_CHECKLIST_GROUPS: WorkflowChecklistGroup[] = [
@@ -323,6 +368,11 @@ export const WORKFLOW_CHECKLIST_GROUPS: WorkflowChecklistGroup[] = [
       { id: "c9", label: "Set up .prettierrc and ESLint config" },
       { id: "c10", label: "Generated Supabase types (if using Supabase)" },
       { id: "c11", label: "Wrote API_SPEC.md (if using API routes)" },
+      {
+        id: "c18",
+        label:
+          "Created AGENTS.md with AI behavioral rules (Andrej Karpathy style)",
+      },
     ],
   },
   {
@@ -395,5 +445,10 @@ export const WORKFLOW_PHASE_COLORS: Record<
     text: "text-accent",
     bg: "bg-accent/10",
     border: "border-accent/20",
+  },
+  phase9: {
+    text: "text-info",
+    bg: "bg-info/10",
+    border: "border-info/20",
   },
 };
