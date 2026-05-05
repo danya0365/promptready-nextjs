@@ -579,6 +579,150 @@ export const TRICKS: Trick[] = (
         name: "Marosdee Uma",
       },
     },
+    {
+      id: "ai-task-decomposition-engine",
+      slug: "ai-task-decomposition-engine",
+      title: "AI Task Decomposition Engine: From Vague Idea to Action Plan",
+      description:
+        "Stop staring at a vague task and wondering where to start. Dump it into AI and let it break the task into ordered subtasks, estimate effort, define acceptance criteria, and build a checkable execution plan.",
+      category: "Productivity",
+      tags: [
+        "AI",
+        "Productivity",
+        "Planning",
+        "Task Management",
+        "Decomposition",
+      ],
+      difficulty: "Intermediate",
+      createdAt: "2026-05-01",
+      steps: [
+        {
+          title: "Step 1: Dump the Vague Task",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Write the task exactly as it is in your head—messy, incomplete, or ambiguous. The AI will fill in the gaps.",
+            },
+            {
+              type: "code",
+              content:
+                "I need to [your vague task here, e.g. 'refactor the auth system'].\n\nI do not have a plan yet.\nBreak this down for me.",
+              language: "markdown",
+            },
+            {
+              type: "note",
+              content:
+                "Include any known constraints: deadline, tech stack, team size, or dependencies. The more context, the better the decomposition.",
+            },
+          ],
+        },
+        {
+          title: "Step 2: Decompose into Subtasks",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Ask AI to slice the task into the smallest independent subtasks that still deliver value. Each subtask should be completable in one focused session.",
+            },
+            {
+              type: "code",
+              content:
+                "Break the task into subtasks.\nRules:\n1. Each subtask must fit in one focused work session (2-4 hours).\n2. Each subtask must have a clear output I can verify.\n3. If a subtask is still vague, break it down further.\n4. Flag any subtask that requires external input (stakeholder, API docs, design).",
+              language: "markdown",
+            },
+            {
+              type: "success",
+              content:
+                "You now have a granular todo list instead of one intimidating monster task.",
+            },
+          ],
+        },
+        {
+          title: "Step 3: Order by Dependency & Priority",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Ask AI to sort the subtasks so you never start something that depends on unfinished work.",
+            },
+            {
+              type: "code",
+              content:
+                "Now order the subtasks:\n1. Group them by phase (e.g., Research → Design → Implementation → Testing).\n2. Within each phase, sort by dependency (what must be done first).\n3. Mark the critical path—the sequence that determines total time.\n4. Identify subtasks that can run in parallel.",
+              language: "markdown",
+            },
+            {
+              type: "note",
+              content:
+                "If you are working solo, ignore parallel tasks. If you have a team, mark assignable chunks.",
+            },
+          ],
+        },
+        {
+          title: "Step 4: Add Estimates & Acceptance Criteria",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Each subtask needs a time estimate and a definition of done. This prevents scope creep and lets you track progress.",
+            },
+            {
+              type: "code",
+              content:
+                "For each subtask, add:\n1. Estimated hours (use 0.5h / 1h / 2h / 4h / 1d / 2d).\n2. Confidence level (High / Medium / Low).\n3. Acceptance criteria: what must be true for this subtask to be considered done?\n4. One risk that could blow up the estimate.",
+              language: "markdown",
+            },
+            {
+              type: "warning",
+              content:
+                "AI estimates are guesses. Treat them as conversation starters, not contracts. Update them as you learn more.",
+            },
+          ],
+        },
+        {
+          title: "Step 5: Generate a Checkable Execution Plan",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "The final step: package everything into a format you can paste into your task manager or tick off daily.",
+            },
+            {
+              type: "code",
+              content:
+                "Format the final plan as a markdown checklist.\n\nUse this structure per subtask:\n- [ ] Subtask title\n  - Output: [what I will deliver]\n  - Estimate: [X hours]\n  - Acceptance: [criteria]\n  - Risk: [one-liner]\n\nGroup by phase. Add a total hour estimate at the top.",
+              language: "markdown",
+            },
+            {
+              type: "success",
+              content:
+                "Copy the checklist into your notes, todo app, or project board. Update checkboxes as you finish each subtask.",
+            },
+          ],
+        },
+      ],
+      commonIssues: [
+        {
+          issue: "AI breaks tasks into pieces that are still too big",
+          solution:
+            "Add a size rule: 'No subtask larger than 2 hours. If it is larger, split it again.'",
+        },
+        {
+          issue: "Estimates are wildly optimistic",
+          solution:
+            "Ask AI to double every estimate (or add a 50% buffer) and explain why. Low-confidence estimates should be flagged for spike tasks.",
+        },
+        {
+          issue: "Too many subtasks—overwhelming instead of helpful",
+          solution:
+            "Cap the list: 'Maximum 10 subtasks. Group related ones together.' Or ask AI to cluster subtasks into milestones.",
+        },
+      ],
+      author: {
+        name: "Marosdee Uma",
+      },
+    },
   ] as Trick[]
 ).sort(
   (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
