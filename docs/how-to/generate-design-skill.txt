@@ -1,0 +1,31 @@
+DESIGN.md จะทำให้วงการ Design ไม่เหมือนเดิม
+
+> เคยไหม สั่ง AI ทำ landing page → สีไม่ตรง
+> สั่งใหม่ → font เพี้ยน
+> สั่งครั้งที่สาม → spacing มั่ว
+> แล้วเราก็ก็อปวาง prompt เดิมๆ ทุกที่ ทุก tool ทุกวัน
+> นี่ไม่ใช่ปัญหา AI โง่
+> นี่คือปัญหา ของระบบ
+ต่อจากนี้ผมจะสอนวิธีขี้เกียจให้เป็น ด้วยการวาง Workflow ครั้งเดียว ใช้ได้ตลอดไปด้วย DESIGN.md
+จากข่าวล่าสุดที่ Google Labs เพิ่งปล่อย DESIGN.md ออกมา เป็น markdown ไฟล์เดียว ที่บอก AI ทุกตัวว่าแบรนด์คุณหน้าตายังไง moodboard ยังไงทำให้ AI เข้าใจใน CI และ Artwork style ของแต่ละคน ถือเป็น Standard ใหม่สำหรับงาน Design
+ตัวอย่างของ Design.md
+```
+สี → #FF66FF, #FF33FF,
+font → Sukhumvit, Arial
+spacing → 5px
+ปุ่ม → ขอเป็นวงกลม หรือสีเหลี่ยมขอบมน
+```
+ข้อดีคือ ChatGPT, Cursor, Gemini และ Claude → อ่านได้หมด
+บอกครั้งเดียว ใช้ได้ทุกที่ เหมือน เป็นเหมือน Context สำหรับการ Design ให้ AI เข้าใจและออกแบบตาม Template ของเรา
+ทำไมต้องเป็น markdown ?
+md file เป็นไฟล์ที่ AI Agent เข้าใจได้ง่ายที่สุด 
+- AI อ่านได้ (token แบบ structured)
+- คนอ่านออก (อธิบายว่าทำไมเลือกแบบนี้)
+ไม่ใช่ JSON ที่คนเปิดมาตาลาย ไม่ใช่ Figma export, illustrator, photoshop file ที่ AI เปิดไม่ได้ หรือจะบอกให้ AI ออกแบบสไลด์ โดยส่ง Reference ให้ดูเป็น png หรือ jpg ก็เปลือง Tokens กว่า AI จะอ่านแต่ละ Pixel แล้วทำงาน Design ได้
+Optimal Path สำหรับคนใช้ AI ทำ UI
+ต่อจากนี้เราไม่ต้องมาเตรียม Prompt รวมถึงภาพ Reference ให้ AI ในการออกแบบงานต่างๆแล้ว แค่เขียน Requirements ของเราลงไปใน DESIGN.md ให้ AI แค่ไฟล์เดียว
+- ❌ บอกสี/font/spacing ทุก prompt
+- ✅ เขียน DESIGN.md ครั้งเดียว → drop เข้า context → จบ
+ขี้เกียจให้เป็น = ตั้งระบบให้ AI เข้าใจคุณ ไม่ใช่อธิบายซ้ำทุกวัน
+
+ลองศึกษาการสร้าง Design Skill เพิ่มเติมได้ที่ https://github.com/google-labs-code/design.md

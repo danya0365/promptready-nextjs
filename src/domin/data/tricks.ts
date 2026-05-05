@@ -723,6 +723,138 @@ export const TRICKS: Trick[] = (
         name: "Marosdee Uma",
       },
     },
+    {
+      id: "design-md-one-file",
+      slug: "design-md-consistent-ai-design",
+      title: "DESIGN.md: One File to Rule All AI Design Output",
+      description:
+        "Stop repeating color codes, font names, and spacing rules in every prompt. Create a single DESIGN.md file that defines your brand design system. Drop it into any AI tool—ChatGPT, Cursor, Gemini, Claude—and get consistent, on-brand design output instantly.",
+      category: "Productivity",
+      tags: ["AI", "Design", "Productivity", "Branding", "Markdown", "Context"],
+      difficulty: "Intermediate",
+      createdAt: "2026-05-05",
+      steps: [
+        {
+          title: "Step 1: Understand Why AI Design Is Inconsistent",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "The real problem is not that AI is bad at design. The problem is that every prompt starts from zero. You describe your brand differently each time, so AI produces different results.",
+            },
+            {
+              type: "note",
+              content:
+                "❌ Prompt 1: 'Make a landing page with pink buttons.'\n❌ Prompt 2: 'Use the same pink as last time.'\n❌ Prompt 3: 'No, the darker pink.'\n→ AI has no persistent memory of your brand.",
+            },
+          ],
+        },
+        {
+          title: "Step 2: Create Your DESIGN.md",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Write one markdown file that contains every design decision your brand has made. Think of it as a design system that AI can read natively.",
+            },
+            {
+              type: "code",
+              content:
+                "# DESIGN.md\n\n## Brand Identity\n- Primary Color: #FF66FF\n- Secondary Color: #FF33FF\n- Accent Color: #00E5FF\n- Font Family: Sukhumvit, Arial, sans-serif\n\n## Spacing System\n- Base unit: 5px\n- Section padding: 40px (8 units)\n- Component gap: 20px (4 units)\n\n## Component Rules\n- Buttons: rounded-full, 12px padding, uppercase text\n- Cards: 16px border-radius, subtle shadow (0 2px 8px rgba(0,0,0,0.1))\n- Inputs: 8px border-radius, 1px border #E0E0E0\n\n## Mood & Tone\n- Friendly, playful, high-energy\n- Avoid corporate blues and greys\n- Use gradients sparingly—only for hero sections",
+              language: "markdown",
+            },
+            {
+              type: "success",
+              content:
+                "Keep it under 200 lines. AI reads it in one glance. Humans can edit it without opening Figma.",
+            },
+          ],
+        },
+        {
+          title: "Step 3: Drop DESIGN.md into AI Context",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Before asking AI to generate anything visual, paste your DESIGN.md into the chat. Most AI tools accept file uploads or long context pastes.",
+            },
+            {
+              type: "code",
+              content:
+                "I am attaching my DESIGN.md.\nAll design output must strictly follow the rules inside this file.\nIf something is ambiguous, ask me before guessing.\n\n[Attach or paste DESIGN.md here]\n\nNow generate a landing page hero section for my new SaaS product.",
+              language: "markdown",
+            },
+            {
+              type: "note",
+              content:
+                "Pro tip: In Cursor or Claude Code, save DESIGN.md in your project root. Reference it with @DESIGN.md in prompts.",
+            },
+          ],
+        },
+        {
+          title: "Step 4: Iterate and Maintain",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Your brand evolves. When you decide on a new color or component style, update DESIGN.md first—not after ten bad generations.",
+            },
+            {
+              type: "code",
+              content:
+                "Update DESIGN.md with this change:\n- New button hover state: scale(1.02) + brightness(110%)\n- New breakpoint: mobile-first at 375px\n\nThen re-generate the component using the updated file.",
+              language: "markdown",
+            },
+            {
+              type: "warning",
+              content:
+                "Do not let AI edit DESIGN.md directly. It may over-generalize. You own the design system. AI only reads it.",
+            },
+          ],
+        },
+        {
+          title: "Step 5: Why Markdown Beats Everything Else",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "JSON is machine-friendly but human-hostile. Figma exports are binary blobs AI cannot read. PNG references waste tokens on pixel interpretation. Markdown is the sweet spot.",
+            },
+            {
+              type: "note",
+              content:
+                "• JSON: AI reads it, but you cannot edit it comfortably.\n• Figma / Illustrator / Photoshop: AI cannot open these files at all.\n• PNG / JPG references: AI burns tokens decoding pixels instead of understanding rules.\n• ✅ Markdown: Structured enough for AI. Readable enough for humans. Zero overhead.",
+            },
+            {
+              type: "success",
+              content:
+                "One file. Every tool. Consistent output. That is the lazy-but-smart way to work with AI.",
+            },
+          ],
+        },
+      ],
+      commonIssues: [
+        {
+          issue: "DESIGN.md is too long and eats the context window",
+          solution:
+            "Shrink it to critical rules only (colors, fonts, spacing, component rules). Move moodboards and extended examples to a separate file.",
+        },
+        {
+          issue: "AI still deviates from the spec occasionally",
+          solution:
+            "Add a strict system prompt: 'Strictly follow DESIGN.md. If a requirement conflicts with your training, ask before deviating.'",
+        },
+        {
+          issue: "Managing multiple brands or projects",
+          solution:
+            "Create one DESIGN.md per project. Name them clearly: DESIGN-clientA.md, DESIGN-internal.md. Reference the correct one per task.",
+        },
+      ],
+      author: {
+        name: "Marosdee Uma",
+      },
+      sourceUrl: "https://github.com/google-labs-code/design.md",
+    },
   ] as Trick[]
 ).sort(
   (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),
