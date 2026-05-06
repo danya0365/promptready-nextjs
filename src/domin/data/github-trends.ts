@@ -783,4 +783,102 @@ export const GITHUB_TRENDS_DATA: GithubWeekly[] = [
       },
     ],
   },
+  {
+    slug: "past-7-days-2026-05-06",
+    title: "10 Fastest Growing Repos - Past 7 Days (2026-05-06)",
+    description:
+      "Automated analysis of the fastest growing repositories from the past 7 days (updated 2026-05-06).",
+    coverImage:
+      "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=1200&q=80",
+    date: "2026-05-06T15:38:30.245Z",
+    repos: [
+      {
+        id: "r1778081911141-0",
+        name: "whatcable",
+        description:
+          "macOS menu bar app that tells you, in plain English, what each USB-C cable plugged into your Mac can actually do",
+        url: "https://github.com/darrylmorley/whatcable",
+        starsGained: 2020,
+        language: "Swift",
+      },
+      {
+        id: "r1778081911141-1",
+        name: "deepclaude",
+        description:
+          "Use Claude Code's autonomous agent loop with DeepSeek V4 Pro, OpenRouter, or any Anthropic-compatible backend. Same UX, 17x cheaper.",
+        url: "https://github.com/aattaran/deepclaude",
+        starsGained: 1429,
+        language: "JavaScript",
+      },
+      {
+        id: "r1778081911141-2",
+        name: "deepsec",
+        description:
+          "Deepsec is a security harness for finding vulnerabilities in your codebase powered by coding agents",
+        url: "https://github.com/vercel-labs/deepsec",
+        starsGained: 1269,
+        language: "TypeScript",
+      },
+      {
+        id: "r1778081911141-3",
+        name: "dictionary-of-ai-coding",
+        description: "AI coding jargon, explained in plain English.",
+        url: "https://github.com/mattpocock/dictionary-of-ai-coding",
+        starsGained: 1123,
+        language: "TypeScript",
+      },
+      {
+        id: "r1778081911141-4",
+        name: "NTSB_FOIA_MU5735",
+        description: "No description provided.",
+        url: "https://github.com/wrongly-cuddly-obsession/NTSB_FOIA_MU5735",
+        starsGained: 971,
+        language: "Unknown",
+      },
+      {
+        id: "r1778081911141-5",
+        name: "keep-codex-fast",
+        description:
+          "A backup-first Codex skill for keeping local Codex state fast, clean, and recoverable.",
+        url: "https://github.com/vibeforge1111/keep-codex-fast",
+        starsGained: 804,
+        language: "Python",
+      },
+      {
+        id: "r1778081911141-6",
+        name: "cheat-on-content",
+        description:
+          "Content is already a cheat-code race—whoever cracks the patterns first wins the traffic. Your auto-evolving ops expert that learns YOUR account, not the global average. The Claude Code workflow behind 1M followers in 1 month.",
+        url: "https://github.com/XBuilderLAB/cheat-on-content",
+        starsGained: 723,
+        language: "Python",
+      },
+      {
+        id: "r1778081911141-7",
+        name: "baguette",
+        description:
+          "Headless iOS Simulator manager/farm + host-side input injection for iOS 26 — taps, swipes, multi-finger gestures, and 60 fps streaming",
+        url: "https://github.com/tddworks/baguette",
+        starsGained: 674,
+        language: "Swift",
+      },
+      {
+        id: "r1778081911141-8",
+        name: "automotive-skills-suite",
+        description:
+          "100+ installable Claude skills covering Engineering areas such as, ISO 26262 functional safety, ISO/SAE 21434 cybersecurity, ISO 21448 SOTIF, AIAG-VDA quality (APQP/PPAP/FMEA), Automotive SPICE, and continuous improvement tools — every builder paired with a confirmation reviewer.",
+        url: "https://github.com/jherrodthomas/automotive-skills-suite",
+        starsGained: 651,
+        language: "Unknown",
+      },
+      {
+        id: "r1778081911141-9",
+        name: "petdex",
+        description: "Public gallery of animated Codex pets",
+        url: "https://github.com/crafter-station/petdex",
+        starsGained: 644,
+        language: "TypeScript",
+      },
+    ],
+  },
 ];
