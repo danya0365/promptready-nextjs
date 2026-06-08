@@ -881,4 +881,103 @@ export const GITHUB_TRENDS_DATA: GithubWeekly[] = [
       },
     ],
   },
+  {
+    slug: "past-7-days-2026-06-08",
+    title: "10 Fastest Growing Repos - Past 7 Days (2026-06-08)",
+    description:
+      "Automated analysis of the fastest growing repositories from the past 7 days (updated 2026-06-08).",
+    coverImage:
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=1200&q=80",
+    date: "2026-06-08T06:28:31.664Z",
+    repos: [
+      {
+        id: "r1780900112471-0",
+        name: "skylight",
+        description:
+          "Project the aircraft passing overhead onto your ceiling in real time, from an RTL-SDR — with a live sky layer (sun, moon, stars, ISS) and where each plane is headed.",
+        url: "https://github.com/cpaczek/skylight",
+        starsGained: 2299,
+        language: "TypeScript",
+      },
+      {
+        id: "r1780900112471-1",
+        name: "goose",
+        description: "Goose Swift proof-of-concept README",
+        url: "https://github.com/b-nnett/goose",
+        starsGained: 2272,
+        language: "Rust",
+      },
+      {
+        id: "r1780900112471-2",
+        name: "JoyAI-Echo",
+        description:
+          "JoyAI-Echo: Pushing the Frontier of Long Audio-Visual Generation",
+        url: "https://github.com/jd-opensource/JoyAI-Echo",
+        starsGained: 897,
+        language: "Python",
+      },
+      {
+        id: "r1780900112471-3",
+        name: "sandboxd",
+        description:
+          "Self-hosted dev sandboxes with preview URLs. One command. No Kubernetes, perfect for coding agents and Saas factories",
+        url: "https://github.com/tastyeffectco/sandboxd",
+        starsGained: 501,
+        language: "Go",
+      },
+      {
+        id: "r1780900112471-4",
+        name: "xiaoer-videolab",
+        description:
+          "One click on the toolbar grabs the current page's video into ~/Downloads — local yt-dlp daemon, 1800+ sites. 小耳抓视频：一键把当前页视频抓到本地。",
+        url: "https://github.com/Jane-xiaoer/xiaoer-videolab",
+        starsGained: 473,
+        language: "JavaScript",
+      },
+      {
+        id: "r1780900112471-5",
+        name: "9drive",
+        description:
+          "9Drive is a storage gateway web app for connecting multiple Google Drive accounts into one virtual storage dashboard. Users can connect Google Drive accounts, track quota, upload files, organize files with virtual folders, preview files, and let the backend route uploads to the Drive account with enough free space.",
+        url: "https://github.com/zenhosta/9drive",
+        starsGained: 420,
+        language: "TypeScript",
+      },
+      {
+        id: "r1780900112471-6",
+        name: "meatshell",
+        description:
+          "一个轻量级、低内存占用的 SSH / 终端客户端（A lightweight, low-memory SSH / terminal client）",
+        url: "https://github.com/jeff141/meatshell",
+        starsGained: 398,
+        language: "Rust",
+      },
+      {
+        id: "r1780900112471-7",
+        name: "zhongguo-traditional-colors",
+        description: "中华传统色演示、色卡浏览与颜色知识科普开源项目",
+        url: "https://github.com/nevertoday/zhongguo-traditional-colors",
+        starsGained: 395,
+        language: "JavaScript",
+      },
+      {
+        id: "r1780900112471-8",
+        name: "baoyu-design",
+        description:
+          "Run Claude Design locally as an Agent Skill — Cursor, Claude Code & more. Produce polished UI mockups, prototypes, decks & wireframes as self-contained HTML, without claude.ai/design. Best with Opus 4.8.",
+        url: "https://github.com/JimLiu/baoyu-design",
+        starsGained: 376,
+        language: "JavaScript",
+      },
+      {
+        id: "r1780900112471-9",
+        name: "guard-skills",
+        description:
+          "Guard skills for coding agents, quality gates that catch AI-generated failure modes in code, tests, and docs",
+        url: "https://github.com/amElnagdy/guard-skills",
+        starsGained: 354,
+        language: "Unknown",
+      },
+    ],
+  },
 ];
