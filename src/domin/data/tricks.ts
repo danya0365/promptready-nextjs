@@ -855,6 +855,105 @@ export const TRICKS: Trick[] = (
       },
       sourceUrl: "https://github.com/google-labs-code/design.md",
     },
+    {
+      id: "claude-code-glm-5-2",
+      slug: "run-claude-code-with-glm-5-2",
+      title: "สลับเครื่องยนต์ Claude Code ไปใช้ GLM (ถูกกว่า Opus ~5 เท่า)",
+      description:
+        "เปลี่ยนโมเดลข้างใน Claude Code จาก Claude Opus เป็น GLM ของ Z.ai (open-source) — ค่า token ถูกลงหลายเท่า แต่ยังใช้ CLAUDE.md, skills และคำสั่งเดิมได้ครบ",
+      category: "Coding",
+      tags: ["Claude Code", "GLM", "Z.ai", "Open Source", "ประหยัด token"],
+      difficulty: "Beginner",
+      createdAt: "2026-06-26",
+      steps: [
+        {
+          title: "ขั้นที่ 1: GLM + Z.ai คืออะไร ทำไมน่าลอง",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "Claude Code ปกติขับเคลื่อนด้วยโมเดลตระกูล Claude เท่านั้น แต่เราชี้ปลายทางไปที่ Z.ai (ผู้ให้บริการ API ของโมเดล GLM ซึ่งเป็น open-source) แล้วใช้ GLM ทำงานแทน Claude Opus ได้เลย โดยไม่ต้องเรียนเครื่องมือใหม่",
+            },
+            {
+              type: "text",
+              content:
+                "ของเดิมยังใช้ได้ครบ: อ่านไฟล์ CLAUDE.md ที่เขียนกำกับโปรเจกต์ เรียก skills ที่ตั้งไว้ และรับคำสั่งอย่าง /goal ได้เหมือนเดิม — แค่เปลี่ยนเครื่องยนต์ข้างใน ไม่ต้องย้ายงานไปไหน",
+            },
+            {
+              type: "note",
+              content:
+                "เทียบราคา/ความเร็ว (ตามบทความต้นฉบับ):\n• ราคา GLM ผ่าน Z.ai ถูกกว่า Claude Opus หลายเท่าในงานเดียวกัน\n• งานออกแบบหน้าเว็บครั้งหนึ่ง GLM ทำเสร็จใน 3:59 นาที ส่วน Opus ใช้ 14:59 นาที\n• ราคาปัจจุบันจาก Z.ai (ต่อ 1M tokens): GLM-5 $1/$3.2 · GLM-4.7 $0.6/$2.2 · ส่วน Claude Opus อยู่ที่ $5/$25",
+            },
+          ],
+        },
+        {
+          title: "ขั้นที่ 2: ตั้งค่าใน .claude/settings.local.json",
+          blocks: [
+            {
+              type: "text",
+              content:
+                "ตั้งค่าแยกรายโปรเจกต์ได้เลย เปิดไฟล์ .claude/settings.local.json ในโปรเจกต์ แล้ววางค่าด้านล่าง — ANTHROPIC_BASE_URL ชี้ไปเซิร์ฟเวอร์ของ Z.ai แทนของ Anthropic และบังคับทุก model slot ให้ใช้ GLM",
+            },
+            {
+              type: "code",
+              language: "json",
+              content: `{
+  "env": {
+    "ANTHROPIC_BASE_URL": "https://api.z.ai/api/anthropic",
+    "ANTHROPIC_AUTH_TOKEN": "<ใส่ Z.ai API key ของคุณ>",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "glm-4.7",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "glm-4.7",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "glm-4.5-air"
+  }
+}`,
+            },
+            {
+              type: "note",
+              content:
+                "สร้าง API key ได้ที่ z.ai/manage-apikey/apikey-list · บทความต้นฉบับเรียกรุ่นนี้ว่า \"GLM 5.2\" ปัจจุบัน Z.ai มี glm-5 (ใหม่สุด) และ glm-4.7 — เช็คชื่อรุ่นล่าสุดที่ z.ai/model-api แล้วปรับค่าให้ตรง",
+            },
+          ],
+        },
+        {
+          title: "ขั้นที่ 3: เลือกเครื่องยนต์รายโฟลเดอร์",
+          blocks: [
+            {
+              type: "success",
+              content:
+                "กำหนดแยกรายโฟลเดอร์ได้: โฟลเดอร์ไหนวางไฟล์ settings.local.json นี้ไว้ก็ใช้ GLM ส่วนโฟลเดอร์ที่ไม่มีก็กลับไปใช้ Opus ตามปกติ — งานที่ต้องเร็วและประหยัดส่งให้ GLM งานที่ต้องคิดหนักจริงๆ ใช้ Opus ในอีกโฟลเดอร์ ไม่ต้องเลือกข้าง",
+            },
+          ],
+        },
+        {
+          title: "ขั้นที่ 4: ข้อจำกัดที่ต้องรู้",
+          blocks: [
+            {
+              type: "warning",
+              content:
+                "ถูกกว่าและเร็วกว่าไม่ได้แปลว่าดีกว่าทุกด้าน GLM ยังสู้ Opus ไม่ได้ในงานที่ต้องคิดหลายชั้นและเก็บรายละเอียดให้ครบ เช่นการไล่เทียบค่าที่เขียนคนละรูปแบบ (true vs 1 vs 1.0 ที่หมายถึงค่าเดียวกัน) และในงานสร้างสรรค์หนักๆ GLM กลับช้าลง (ครั้งหนึ่งใช้ 35 นาที ส่วน Opus ใช้แค่ 11 นาที)",
+            },
+            {
+              type: "text",
+              content:
+                "คำถามที่ควรถามไม่ใช่ \"โมเดลไหนเก่งที่สุด\" แต่เป็น \"โมเดลไหนเก่งพอสำหรับงานตรงหน้า\" — ทักษะที่มีค่าคือการรู้ว่างานชิ้นไหนควรส่งให้เครื่องยนต์ตัวไหน",
+            },
+          ],
+        },
+      ],
+      commonIssues: [
+        {
+          issue: "ตั้งค่าแล้ว Claude Code ยังเรียกโมเดล Claude เดิม",
+          solution:
+            "ตรวจว่าไฟล์อยู่ที่ .claude/settings.local.json ของโปรเจกต์จริง และรีสตาร์ท session ใหม่ให้ค่า env ถูกโหลด",
+        },
+        {
+          issue: "เจอ error เรื่องชื่อโมเดลไม่พบ",
+          solution:
+            "ชื่อ model id อาจเปลี่ยนตามรุ่นล่าสุด เปิด z.ai/model-api ดูชื่อรุ่นที่ใช้ได้ (เช่น glm-5, glm-4.7) แล้วแก้ค่าใน settings ให้ตรง",
+        },
+      ],
+      sourceUrl: "https://web.facebook.com/share/p/1BMSBt3joh/",
+    },
   ] as Trick[]
 ).sort(
   (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime(),

@@ -433,6 +433,38 @@ export const PROVIDERS: LLMProvider[] = [
       "คัดลอก API Key ที่ได้",
     ],
   },
+  {
+    id: "z-ai",
+    name: "Z.ai (GLM)",
+    type: "provider",
+    country: "cn",
+    flag: "🇨🇳",
+    models: [
+      "GLM-5",
+      "GLM-4.7",
+      "GLM-4.6",
+      "GLM-4.5",
+      "GLM-4.5-Air",
+      "GLM-4.7-Flash",
+    ],
+    featuredModels: ["GLM-5", "GLM-4.7", "GLM-4.5-Air"],
+    limits: ["GLM-4.7-Flash ฟรี", "รุ่นอื่นจ่ายตามใช้"],
+    note: "ราคา (ต่อ 1M tokens): GLM-5 $1/$3.2 · GLM-4.7 $0.6/$2.2 · GLM-4.5-Air $0.2/$1.1 · ใช้แทน Claude Opus ใน Claude Code ได้ผ่าน Anthropic endpoint (api.z.ai/api/anthropic)",
+    apiUrl: "https://z.ai/manage-apikey/apikey-list",
+    docsUrl: "https://docs.z.ai/scenario-example/develop-tools/claude",
+    openAICompatible: true,
+    tags: ["glm", "open-source", "claude-code", "cheap"],
+    highlight: "GLM-4.7-Flash ใช้ฟรี · GLM-5 แทน Opus ราคาประหยัด",
+    baseUrl: "https://api.z.ai/api/paas/v4/",
+    envVar: "ZAI_API_KEY",
+    defaultModel: "glm-4.7",
+    setupSteps: [
+      "ไปที่ Z.AI Open Platform (z.ai/model-api) แล้วลงชื่อเข้าใช้",
+      "เปิดหน้า API Keys (z.ai/manage-apikey/apikey-list)",
+      'คลิกสร้าง API Key ใหม่',
+      "คัดลอก API Key ที่ได้ไปตั้งเป็น environment variable",
+    ],
+  },
 ];
 
 export const PROVIDER_TYPES = [

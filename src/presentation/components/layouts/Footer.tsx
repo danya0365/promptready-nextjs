@@ -18,11 +18,35 @@ interface FooterProps {
 
 const DEFAULT_LINK_GROUPS: FooterLinkGroup[] = [
   {
-    title: "AI Workflows",
+    title: "Explore",
     links: [
-      { label: "All Workflows", href: "/ai-workflows" },
-      { label: "Free LLM APIs", href: "/llm-directory" },
-      { label: "Tricks", href: "/tricks" },
+      { label: "Use Cases", href: "/use-cases" },
+      { label: "AI Workflows", href: "/ai-workflows" },
+      { label: "AI Tricks", href: "/tricks" },
+      { label: "GitHub Trends", href: "/github-trends" },
+      { label: "Blog", href: "/blog" },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      { label: "AI Resources", href: "/ai-resources" },
+      { label: "Free LLMs", href: "/llm-directory" },
+      { label: "Local AI", href: "/local-ai" },
+      {
+        label: "awesome-free-llm-apis",
+        href: "https://github.com/mnfst/awesome-free-llm-apis",
+        external: true,
+      },
+    ],
+  },
+  {
+    title: "Learn",
+    links: [
+      { label: "Start Here", href: "/start-here" },
+      { label: "Guides", href: "/guides" },
+      { label: "Setup Guide", href: "/setup-guide" },
+      { label: "FAQ", href: "/faq" },
     ],
   },
   {
@@ -30,21 +54,11 @@ const DEFAULT_LINK_GROUPS: FooterLinkGroup[] = [
     links: [
       {
         label: "GitHub",
-        href: "https://github.com/danya0365/promptready-nextjs",
+        href: "https://github.com/danya0265/promptready-nextjs",
         external: true,
       },
       { label: "Contribute", href: "/contribute" },
       { label: "Support Us", href: "/support" },
-    ],
-  },
-  {
-    title: "Resources",
-    links: [
-      {
-        label: "awesome-free-llm-apis",
-        href: "https://github.com/mnfst/awesome-free-llm-apis",
-        external: true,
-      },
       { label: "MIT License", href: "/license" },
     ],
   },
@@ -56,7 +70,7 @@ export default function Footer({
   return (
     <footer className="border-t border-border py-16 px-6">
       <div className="max-w-7xl mx-auto">
-        <div className="grid md:grid-cols-4 gap-10">
+        <div className="grid md:grid-cols-3 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div>
             <Link href="/" className="flex items-center gap-2 mb-4">

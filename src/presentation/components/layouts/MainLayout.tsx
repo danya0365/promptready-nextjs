@@ -1,23 +1,23 @@
 import type { ReactNode } from "react";
-import Header, { type NavLink } from "./Header";
+import Header, { type NavItem } from "./Header";
 import Footer from "./Footer";
 
 interface MainLayoutProps {
   children: ReactNode;
-  navLinks?: NavLink[];
+  navItems?: NavItem[];
   ctaLabel?: string;
   ctaHref?: string;
 }
 
 export default function MainLayout({
   children,
-  navLinks,
+  navItems,
   ctaLabel,
   ctaHref,
 }: MainLayoutProps) {
   return (
     <>
-      <Header navLinks={navLinks} ctaLabel={ctaLabel} ctaHref={ctaHref} />
+      <Header navItems={navItems} ctaLabel={ctaLabel} ctaHref={ctaHref} />
       <main>{children}</main>
       <Footer />
     </>

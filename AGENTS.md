@@ -8,6 +8,23 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ---
 
+# Project Overview
+
+**PromptReady** คือเว็บไซต์ (Next.js) สำหรับขาย/นำเสนอ **Toolkit** ที่ช่วยให้นักพัฒนาใช้ AI Coding Assistant (Cursor, Windsurf, Claude Code ฯลฯ) ได้เต็มประสิทธิภาพ — รวบรวม Agent Skills, Prompt Templates, Workflow Patterns, Project Blueprints, IDE Configs และ Architecture Guides ที่พร้อมวาง drop-in. โมเดลธุรกิจจ่ายครั้งเดียวใช้ตลอดชีพ (Starter ฟรี, Pro $29, Team $79).
+
+**Tech stack:** Next.js 16 (App Router) · React 19 · TypeScript 5 · Tailwind CSS 4 · zustand · lucide-react · next-themes. Design แบบ glassmorphism + design tokens รองรับ light/dark mode.
+
+**Architecture:** Clean Architecture แบ่ง layer ใน `src/`:
+
+- `domin/` — types + static data (หมายเหตุ: สะกด "domin" ไม่ใช่ "domain")
+- `application/` — repository interfaces
+- `infrastructure/` — repository implementations (เช่น static data sources)
+- `presentation/` — components, presenters, layouts
+
+หน้าเพจอยู่ใน `app/` (github-trends, llm-directory, local-ai, tricks, ai-workflows, ai-resources, setup-guide, guides ฯลฯ) ข้อมูลส่วนใหญ่เป็น static data ใน `src/domin/data/`.
+
+---
+
 # AI Behavioral Guidelines
 
 Behavioral guidelines to reduce common LLM coding mistakes. Merge with project-specific instructions as needed.
