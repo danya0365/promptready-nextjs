@@ -980,4 +980,103 @@ export const GITHUB_TRENDS_DATA: GithubWeekly[] = [
       },
     ],
   },
+  {
+    slug: "past-7-days-2026-06-28",
+    title: "10 Fastest Growing Repos - Past 7 Days (2026-06-28)",
+    description:
+      "Automated analysis of the fastest growing repositories from the past 7 days (updated 2026-06-28).",
+    coverImage:
+      "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1200&q=80",
+    date: "2026-06-28T04:27:19.919Z",
+    repos: [
+      {
+        id: "r1782620840816-0",
+        name: "codex-orange-book",
+        description:
+          "Codex 橙皮书：从安装到实战案例的全链路 Codex 使用指南（非官方开源，含可下载 PDF）",
+        url: "https://github.com/bozhouDev/codex-orange-book",
+        starsGained: 2221,
+        language: "HTML",
+      },
+      {
+        id: "r1782620840816-1",
+        name: "DeepSpec",
+        description:
+          "DeepSpec: a full-stack codebase for training and evaluating speculative decoding algorithms",
+        url: "https://github.com/deepseek-ai/DeepSpec",
+        starsGained: 1467,
+        language: "Python",
+      },
+      {
+        id: "r1782620840816-2",
+        name: "exploitarium",
+        description:
+          "A single archive of public exploit PoCs and vulnerability research writeups. At the time I post these, none have been reported. Feel free to report them yourself and take credit for the CVE if handed out lulz. Please do not abuse these. I do this so to allure people into the field, and I've always found this is the most efficient way.",
+        url: "https://github.com/bikini/exploitarium",
+        starsGained: 1303,
+        language: "Python",
+      },
+      {
+        id: "r1782620840816-3",
+        name: "wloc",
+        description:
+          "修改 Apple 网络定位（gs-loc）返回坐标 · 支持 Surge / Quantumult X / Loon / Stash · 快捷指令一键设置/恢复定位",
+        url: "https://github.com/Yu9191/wloc",
+        starsGained: 674,
+        language: "JavaScript",
+      },
+      {
+        id: "r1782620840816-4",
+        name: "CWR",
+        description: "Arma: Cold War Assault Remastered Source Code Repository.",
+        url: "https://github.com/BohemiaInteractive/CWR",
+        starsGained: 664,
+        language: "C++",
+      },
+      {
+        id: "r1782620840816-5",
+        name: "theeleven",
+        description:
+          "Eleven autonomous AI agents open live football prop markets on X Layer — custom Uniswap v4 hook, gasless USDT0 staking.",
+        url: "https://github.com/winsznx/theeleven",
+        starsGained: 646,
+        language: "TypeScript",
+      },
+      {
+        id: "r1782620840816-6",
+        name: "Qwen-AgentWorld",
+        description: "Qwen-AgentWorld: Language World Models for General Agents",
+        url: "https://github.com/QwenLM/Qwen-AgentWorld",
+        starsGained: 599,
+        language: "Python",
+      },
+      {
+        id: "r1782620840816-7",
+        name: "awesome-evals",
+        description:
+          "A curated, non-BS library of the best resources for building and evaluating AI agents — papers, blogs, talks, tools, benchmarks. Maintained by BenchFlow.",
+        url: "https://github.com/benchflow-ai/awesome-evals",
+        starsGained: 537,
+        language: "Unknown",
+      },
+      {
+        id: "r1782620840816-8",
+        name: "AgentSpace",
+        description:
+          "\"AgentSpace: Human + Agents. One Team. One Workspace\"",
+        url: "https://github.com/HKUDS/AgentSpace",
+        starsGained: 484,
+        language: "TypeScript",
+      },
+      {
+        id: "r1782620840816-9",
+        name: "tabbit-toy",
+        description:
+          "这是一个基于tabbit的研究包，可以转化成OAI格式出来，同时增加了会员认证功能和一键提取cookie的浏览器拓展，方便快速本地快速使用claude gpt等模型",
+        url: "https://github.com/goehou/tabbit-toy",
+        starsGained: 369,
+        language: "JavaScript",
+      },
+    ],
+  },
 ];
